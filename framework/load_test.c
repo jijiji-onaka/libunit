@@ -6,7 +6,7 @@
 /*   By: rmatsuka <rmatsuka@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 11:24:34 by rmatsuka          #+#    #+#             */
-/*   Updated: 2021/05/09 20:53:48 by rmatsuka         ###   ########.fr       */
+/*   Updated: 2021/05/09 21:21:58 by rmatsuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,16 @@ void    load_test(t_unit_test **list, char *test_name, int (*f)(void))
 {
     t_unit_test *testlist;
 
-    if (*list == NULL || f == NULL)
+    if (list == NULL || f == NULL)
         return ;
+    if (*list == NULL)
+    {
+        *list = malloc(sizeof(list));
+        (*list)->name = test_name;
+        (*list)->f = f;
+        (*list)->next = NULL;
+        return ;
+    }
     testlist = *list;
     while (testlist->next)
         testlist = testlist->next;
