@@ -6,21 +6,23 @@
 #    By: rmatsuka <rmatsuka@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/08 16:29:38 by rmatsuka          #+#    #+#              #
-#    Updated: 2021/05/08 16:35:13 by rmatsuka         ###   ########.fr        #
+#    Updated: 2021/05/09 20:50:21 by rmatsuka         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME =		libunit.a
-SRCS =
+SRCS =		launch_tests.c \
+			load_test.c
+
 OBJS = 		$(SRCS:.c=.o)
 
 CC 	=		gcc
-CFLAGS =	Werror -Wall -Wextra
+CFLAGS =	-Werror -Wall -Wextra
 
 all:	$(NAME)
 
 $(NAME):	$(OBJS)
-			$(LIBC) $(NAME) $(OBJS)
+			ar rcs $(NAME) ../libft/libft.a $(OBJS)
 
 clean:
 			$(RM) $(OBJS)

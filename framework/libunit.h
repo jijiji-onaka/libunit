@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libunit.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: rmatsuka <rmatsuka@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 16:36:33 by rmatsuka          #+#    #+#             */
-/*   Updated: 2021/05/09 12:33:47 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/05/09 20:51:09 by rmatsuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <stdio.h>
+#include "../libft/libft.h"
 
 /* 1ノード1テストのリスト */
 /* これを宣言する大元でNULL初期化しないといけない */

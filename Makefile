@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+         #
+#    By: rmatsuka <rmatsuka@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/09 14:16:52 by tjinichi          #+#    #+#              #
-#    Updated: 2021/05/09 14:27:17 by tjinichi         ###   ########.fr        #
+#    Updated: 2021/05/09 20:49:01 by rmatsuka         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ TEST_OBJS = ${TEST_SRCS:.c=.o}
 
 LIBS = 	libft/libft.a
 
-all:
+all: $(LIBS)
 	make -C framework
 
 FRAMEWORK = framework/libunit.a
