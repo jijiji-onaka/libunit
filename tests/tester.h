@@ -38,6 +38,18 @@ int		strlen_launcher(void);
 int		strlen_basic_test(void);
 int		strlen_null_test(void);
 int		strlen_long_string_test(void);
+/*
+** ATOI TEST
+*/
+int		atoi_launcher(void);
+int		atoi_basic_test(void);
+int		atoi_null_test(void);
+int		atoi_intmax_test(void);
+int		atoi_intmin_test(void);
+int		atoi_space_test(void);
+/*
+**
+*/
 
 # define OK true
 # define KO false

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+         #
+#    By: rmatsuka <rmatsuka@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/09 14:16:52 by tjinichi          #+#    #+#              #
-#    Updated: 2021/05/09 21:13:03 by tjinichi         ###   ########.fr        #
+#    Updated: 2021/05/09 23:03:09 by rmatsuka         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,12 @@ TEST_SRCS =	tests/main.c \
 		tests/strlen_test/01_basic_test.c \
 		tests/strlen_test/02_null_test.c \
 		tests/strlen_test/03_long_string_test.c \
+		tests/atoi_test/00_launcher.c \
+		tests/atoi_test/01_basic_test.c \
+		tests/atoi_test/02_null_test.c \
+		tests/atoi_test/03_intmax_test.c \
+		tests/atoi_test/04_intmin_test.c \
+		tests/atoi_test/05_space_test.c
 
 TEST_OBJS = ${TEST_SRCS:.c=.o}
 

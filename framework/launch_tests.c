@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   launch_tests.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: rmatsuka <rmatsuka@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 11:35:59 by rmatsuka          #+#    #+#             */
-/*   Updated: 2021/05/09 21:55:26 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/05/09 22:13:49 by rmatsuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ static int run_test(int (*f)(void))
     signal(SIGSEGV, NULL);
     signal(SIGBUS, NULL);
     pid = fork();
+    status = 0;
     if (pid < 0)                // fail
         ft1("error\n", STDOUT_FILENO);   // error処理？
     else if (pid == 0)          // child process
