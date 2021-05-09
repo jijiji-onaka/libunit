@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 12:09:45 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/05/09 15:09:29 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/05/09 21:16:12 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,9 @@ int	main(void)
 
 	test_ret = 0;
 	test_ret += signal_launcher();
+	puts("");
 	test_ret += strlen_launcher();
+	puts("");
 	if (test_ret == TEST_NUM)
 		return (print_result(OK));
 	else
