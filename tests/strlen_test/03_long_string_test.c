@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 14:59:12 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/05/09 15:46:45 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/05/09 21:53:39 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ static bool	long_string_test(void)
 		str[i] = '7';
 	str[i] = '\0';
 	if (ft_strlen(str) == strlen(str))
-		return (0);
+		return (1);
 	else
-		return (-1);
+		return (0);
 }
 
 int	strlen_long_string_test(void)

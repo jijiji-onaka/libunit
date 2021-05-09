@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   launch_tests.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmatsuka <rmatsuka@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 11:35:59 by rmatsuka          #+#    #+#             */
-/*   Updated: 2021/05/09 20:51:54 by rmatsuka         ###   ########.fr       */
+/*   Updated: 2021/05/09 21:55:26 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,25 +25,39 @@ static int  check_status(int status)
 {
     if (WIFEXITED(status))      // 子プロセスが正常終了ならtrue
     {
-        if (status == 0)        // success
+        // puts("111111");
+        // printf("%d\n", status);
+        // printf("%d\n", WEXITSTATUS(status));
+        if (!WEXITSTATUS(status))        // success
         {
             ft1("[OK]\n", STDOUT_FILENO);
             return (1);
         }
-        else if (status == 256) // 255?
+        else if (WEXITSTATUS(status) == 255) // 255?
         {
             ft1("[KO]\n", STDOUT_FILENO);
             return (0);
         }
     }
-    if (WIFSIGNALED(status))        // 子プロセスがシグナルにより終了した場合 true
+    else if (WIFSIGNALED(status))        // 子プロセスがシグナルにより終了した場合 true
     {
+        // printf("%d\n", status);
+        // printf("%d\n", WTERMSIG(status));
+        // status = 11;
         if (WTERMSIG(status) == SIGSEGV)
             ft1("[SEGV]\n", STDOUT_FILENO);
         if (WTERMSIG(status) == SIGBUS)
             ft1("[BUS]\n", STDOUT_FILENO);
+        return (0);
     }
     return (0);
+}
+
+int a()
+{
+    char *ptr = NULL;
+        *ptr ='a';
+    return (12);
 }
 
 static int run_test(int (*f)(void))
@@ -51,12 +65,20 @@ static int run_test(int (*f)(void))
     int pid;
     int status;
 
+    (void)f;
+    signal(SIGSEGV, NULL);
+    signal(SIGBUS, NULL);
     pid = fork();
     if (pid < 0)                // fail
         ft1("error\n", STDOUT_FILENO);   // error処理？
     else if (pid == 0)          // child process
+    {
+        // char *ptr = NULL;
+        // *ptr ='a';
         exit(f());
-    wait(&status);
+    }
+    else
+        wait(&status);
     return (check_status(status));
 }
 
@@ -74,6 +96,10 @@ int launch_tests(t_unit_test **list)
     success_cnt = 0;
     while (testlist)
     {
+        // printf("> ");
+        // printf("%s\n", testlist->name);
+        // printf(" : ");
+        // fflush(stdout);
         ft1("> ", STDOUT_FILENO);
         ft1(testlist->name, STDOUT_FILENO);
         ft1(" : ", STDOUT_FILENO);

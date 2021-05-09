@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 12:09:45 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/05/09 21:16:12 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/05/09 21:52:10 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	print_title(char *title)
 {
 	write(STDOUT_FILENO, COLOR_YELLOW, 5);
 	write(STDOUT_FILENO, BOLD, 4);
-	ft_putstr_fd(title, STDOUT_FILENO);
+	ft_putendl_fd(title, STDOUT_FILENO);
 	write(STDOUT_FILENO, COLOR_RESET, 4);
 }
 
