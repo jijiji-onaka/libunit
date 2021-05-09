@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmatsuka <rmatsuka@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 11:21:30 by rmatsuka          #+#    #+#             */
-/*   Updated: 2021/04/09 11:02:34 by rmatsuka         ###   ########.fr       */
+/*   Updated: 2021/05/09 14:21:34 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
-	size_t			i;
 	unsigned char	*dest_ptr;
 	unsigned char	*src_ptr;
 
@@ -22,7 +21,6 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 		return (NULL);
 	dest_ptr = (unsigned char *)dest;
 	src_ptr = (unsigned char *)src;
-	i = 0;
 	while (n--)
 	{
 		*dest_ptr = *src_ptr;
