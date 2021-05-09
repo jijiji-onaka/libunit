@@ -6,11 +6,11 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 12:09:45 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/05/09 14:16:01 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/05/09 15:09:29 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./signal_test.h"
+#include "./tester.h"
 
 void	print_title(char *title)
 {
@@ -34,13 +34,16 @@ static int	print_result(bool ok_or_ko)
 		return (-1);
 }
 
+# define TEST_NUM 2
+
 int	main(void)
 {
 	int	test_ret;
 
 	test_ret = 0;
 	test_ret += signal_launcher();
-	if (test_ret == 1)
+	test_ret += strlen_launcher();
+	if (test_ret == TEST_NUM)
 		return (print_result(OK));
 	else
 		return (print_result(KO));

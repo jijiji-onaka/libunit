@@ -1,20 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   02_false_test.c                                    :+:      :+:    :+:   */
+/*   03_long_string_test.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/09 13:52:23 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/05/09 13:56:26 by tjinichi         ###   ########.fr       */
+/*   Created: 2021/05/09 14:59:12 by tjinichi          #+#    #+#             */
+/*   Updated: 2021/05/09 15:46:45 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./../signal_test.h"
+#include "./../tester.h"
 
-int	signal_false_test(void)
+static bool	long_string_test(void)
 {
-	if (false)
+	char	*str;
+	int		i;
+
+	str = malloc((size_t)INT_MAX + 1);
+	if (str == NULL)
+		exit(1);
+	i = -1;
+	while (++i < INT_MAX)
+		str[i] = '7';
+	str[i] = '\0';
+	if (ft_strlen(str) == strlen(str))
+		return (0);
+	else
+		return (-1);
+}
+
+int	strlen_long_string_test(void)
+{
+	if (long_string_test())
 		return (0);
 	else
 		return (-1);

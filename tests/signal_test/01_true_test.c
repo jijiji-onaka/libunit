@@ -6,11 +6,11 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 13:52:23 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/05/09 13:56:12 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/05/09 14:55:32 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./../signal_test.h"
+#include "./../tester.h"
 
 int	signal_true_test(void)
 {

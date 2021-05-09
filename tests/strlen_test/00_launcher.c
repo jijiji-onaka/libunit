@@ -6,21 +6,20 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 13:28:33 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/05/09 14:05:15 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/05/09 15:32:09 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./../signal_test.h"
+#include "./../tester.h"
 
-int	signal_launcher(void)
+int	strlen_launcher(void)
 {
 	t_unit_test	*testlist;
 
 	testlist = NULL;
-	print_title("signal test");
-	load_test(&testlist, "True Test  :", &signal_true_test);
-	load_test(&testlist, "False Test :", &signal_false_test);
-	load_test(&testlist, "Segv Test  :", &signal_segfault_test);
-	load_test(&testlist, "buse Test  :", &signal_bus_error_test);
+	print_title("strlen test");
+	load_test(&testlist, "Basic Test        :", &strlen_basic_test);
+	load_test(&testlist, "Null Test         :", &strlen_null_test);
+	load_test(&testlist, "Long string Test  :", &strlen_long_string_test);
 	return(launch_tests(&testlist));
 }

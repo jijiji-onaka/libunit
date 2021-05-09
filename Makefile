@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rmatsuka <rmatsuka@student.42tokyo.jp>     +#+  +:+       +#+         #
+#    By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/09 14:16:52 by tjinichi          #+#    #+#              #
-#    Updated: 2021/05/09 20:49:01 by rmatsuka         ###   ########.fr        #
+#    Updated: 2021/05/09 21:13:03 by tjinichi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libunit.a
+# NAME = libunit.a
 TEST = libunit_test
 
 CC = gcc -g -fsanitize=address
@@ -18,11 +18,15 @@ CC = gcc -g -fsanitize=address
 CFLAGS = # -Wall -Werror -Wextra -g -fsanitize=address
 
 TEST_SRCS =	tests/main.c \
-		tests/signal_launch/00_launcher.c \
-		tests/signal_launch/01_true_test.c \
-		tests/signal_launch/02_false_test.c \
-		tests/signal_launch/03_segfault_test.c \
-		tests/signal_launch/04_bus_error_test.c \
+		tests/signal_test/00_launcher.c \
+		tests/signal_test/01_true_test.c \
+		tests/signal_test/02_false_test.c \
+		tests/signal_test/03_segfault_test.c \
+		tests/signal_test/04_bus_error_test.c \
+		tests/strlen_test/00_launcher.c \
+		tests/strlen_test/01_basic_test.c \
+		tests/strlen_test/02_null_test.c \
+		tests/strlen_test/03_long_string_test.c \
 
 TEST_OBJS = ${TEST_SRCS:.c=.o}
 
@@ -33,7 +37,7 @@ all: $(LIBS)
 
 FRAMEWORK = framework/libunit.a
 
-test: $(LIBS) $(TEST_OBJS)
+test: all $(LIBS) $(TEST_OBJS)
 	$(CC) $(CFLAGS) -o $(TEST) $(TEST_OBJS) $(LIBS) $(FRAMEWORK)
 
 $(LIBS): FORCE
