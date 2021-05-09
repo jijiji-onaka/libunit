@@ -48,13 +48,25 @@ int		atoi_intmax_test(void);
 int		atoi_intmin_test(void);
 int		atoi_space_test(void);
 /*
+** BZERO TEST
+*/
+int		bzero_launcher(void);
+int		bzero_basic_test(void);
+int		bzero_null_test(void);
+int		bzero_zero_test(void);
+int		bzero_bigsize_test(void);
+int		bzero_minus_test(void);
+/*
 **
 */
+
+
 
 # define OK true
 # define KO false
 # define COLOR_YELLOW "\033[33m"
 # define BOLD "\033[1m"
 # define COLOR_RESET "\033[0m"
+# define SIZE 100
 
 #endif

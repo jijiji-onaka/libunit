@@ -6,7 +6,7 @@
 /*   By: rmatsuka <rmatsuka@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 12:09:45 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/05/09 23:01:00 by rmatsuka         ###   ########.fr       */
+/*   Updated: 2021/05/10 08:40:37 by rmatsuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ int	main(void)
 	test_ret += strlen_launcher();
 	puts("");
 	test_ret += atoi_launcher();
+	puts("");
+	test_ret += bzero_launcher();
 	puts("");
 	if (test_ret == TEST_NUM)
 		return (print_result(OK));
