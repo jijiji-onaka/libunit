@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rmatsuka <rmatsuka@student.42tokyo.jp>     +#+  +:+       +#+         #
+#    By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/09 14:16:52 by tjinichi          #+#    #+#              #
-#    Updated: 2021/05/10 11:40:50 by rmatsuka         ###   ########.fr        #
+#    Updated: 2021/05/10 21:37:57 by tjinichi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # NAME = libunit.a
 TEST = libunit_test
 
-CC = gcc -g -fsanitize=address
+CC = gcc -g # -fsanitize=address
 
 CFLAGS = # -Wall -Werror -Wextra -g -fsanitize=address
 
