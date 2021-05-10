@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: rmatsuka < rmatsuka@student.42tokyo.jp>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 12:09:45 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/05/10 21:55:28 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/05/10 22:42:08 by rmatsuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,10 @@ int	main(void)
 	test_ret += isdigit_launcher();
 	puts("");
 	test_ret += isprint_launcher();
+	puts("");
+	test_ret += itoa_launcher();
+	puts("");
+	test_ret += memccpy_launcher();
 	puts("");
 
 	if (test_ret == TEST_NUM)

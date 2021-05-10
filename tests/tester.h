@@ -103,11 +103,19 @@ int		isprint_all_test(void);
 /*
 ** ITOA TEST
 */
-
+int		itoa_launcher(void);
+int		itoa_basic_test(void);
+int		itoa_intmax_test(void);
+int		itoa_intmin_test(void);
+int		itoa_zero_test(void);
 /*
 ** MEMCCPY TEST
 */
-
+int		memccpy_launcher(void);
+int		memccpy_basic_test(void);
+int		memccpy_basic2_test(void);
+int		memccpy_basic3_test(void);
+int		memccpy_null_test(void);
 /*
 ** MEMCHR TEST
 */
