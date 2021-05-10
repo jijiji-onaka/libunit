@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmatsuka <rmatsuka@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 12:09:45 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/05/10 11:50:22 by rmatsuka         ###   ########.fr       */
+/*   Updated: 2021/05/10 21:48:55 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ static int	print_result(bool ok_or_ko)
 {
 	write(STDOUT_FILENO, BOLD, 4);
 	if (ok_or_ko == OK)
-		write(STDOUT_FILENO, "\033[32mAll test clear !", 21);
+		write(STDOUT_FILENO, "\033[32mAll test clear !\n", 22);
 	else
-		write(STDOUT_FILENO, "\033[31mTest failed ..", 19);
+		write(STDOUT_FILENO, "\033[31mTest failed ..\n", 20);
 	write(STDOUT_FILENO, COLOR_RESET, 4);
 	if (ok_or_ko == OK)
 		return (0);

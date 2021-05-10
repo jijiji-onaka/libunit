@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   launch_tests.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmatsuka <rmatsuka@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 11:35:59 by rmatsuka          #+#    #+#             */
-/*   Updated: 2021/05/09 22:13:49 by rmatsuka         ###   ########.fr       */
+/*   Updated: 2021/05/10 21:46:28 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,8 @@ static int run_test(int (*f)(void))
     int status;
 
     (void)f;
-    signal(SIGSEGV, NULL);
-    signal(SIGBUS, NULL);
+    // signal(SIGSEGV, NULL);
+    // signal(SIGBUS, NULL);
     pid = fork();
     status = 0;
     if (pid < 0)                // fail
