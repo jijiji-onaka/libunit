@@ -127,26 +127,39 @@ int		memchr_null_test(void);
 /*
 ** MEMCMP TEST
 */
+int	    memcmp_launcher(void);
+int	    memcmp_basic_test(void);
+int	    memcmp_basic2_test(void);
+int     memcmp_basic3_test(void);
+int	    memcmp_null_test(void);
 
 /*
 ** MEMCPY TEST
 */
-
+int	    memcpy_launcher(void);
+int	    memcpy_basic_test(void);
+int	    memcpy_basic2_test(void);
+int     memcpy_basic3_test(void);
+int	    memcpy_null_test(void);
 /*
 ** MEMMOVE TEST
 */
-
+int	    memmove_launcher(void);
+int	    memmove_basic_test(void);
+int	    memmove_basic2_test(void);
+int     memmove_basic3_test(void);
+int	    memmove_null_test(void);
 /*
 ** MEMSET TEST
 */
-
+int	    memset_launcher(void);
+int	    memset_basic_test(void);
+int	    memset_basic2_test(void);
+int     memset_basic3_test(void);
+int	    memset_null_test(void);
 /*
 **
 */
-
-
-
-
 # define OK true
 # define KO false
 # define COLOR_YELLOW "\033[33m"

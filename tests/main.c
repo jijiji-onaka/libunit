@@ -6,7 +6,7 @@
 /*   By: rmatsuka < rmatsuka@student.42tokyo.jp>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 12:09:45 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/05/10 23:00:37 by rmatsuka         ###   ########.fr       */
+/*   Updated: 2021/05/11 08:25:05 by rmatsuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,17 @@ int	main(void)
 	puts("");
 	test_ret += memchr_launcher();
 	puts("");
+	test_ret += memcmp_launcher();
+	puts("");
+	test_ret += memcpy_launcher();
+	puts("");
+	test_ret += memmove_launcher();
+	puts("");
+	test_ret += memset_launcher();
+	puts("");
+
+
+
 
 	if (test_ret == TEST_NUM)
 		return (print_result(OK));

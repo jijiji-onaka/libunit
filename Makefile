@@ -6,7 +6,7 @@
 #    By: rmatsuka < rmatsuka@student.42tokyo.jp>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/09 14:16:52 by tjinichi          #+#    #+#              #
-#    Updated: 2021/05/10 23:00:07 by rmatsuka         ###   ########.fr        #
+#    Updated: 2021/05/11 08:31:34 by rmatsuka         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -78,7 +78,27 @@ TEST_SRCS =	tests/main.c \
 		tests/memchr_test/01_basic_test.c \
 		tests/memchr_test/02_basic2_test.c \
 		tests/memchr_test/03_basic3_test.c \
-		tests/memchr_test/04_null_test.c
+		tests/memchr_test/04_null_test.c \
+		tests/memcmp_test/00_launcher.c \
+		tests/memcmp_test/01_basic_test.c \
+		tests/memcmp_test/02_basic2_test.c \
+		tests/memcmp_test/03_basic3_test.c \
+		tests/memcmp_test/04_null_test.c \
+		tests/memcpy_test/00_launcher.c \
+		tests/memcpy_test/01_basic_test.c \
+		tests/memcpy_test/02_basic2_test.c \
+		tests/memcpy_test/03_basic3_test.c \
+		tests/memcpy_test/04_null_test.c \
+		tests/memmove_test/00_launcher.c \
+		tests/memmove_test/01_basic_test.c \
+		tests/memmove_test/02_basic2_test.c \
+		tests/memmove_test/03_basic3_test.c \
+		tests/memmove_test/04_null_test.c \
+		tests/memset_test/00_launcher.c \
+		tests/memset_test/01_basic_test.c \
+		tests/memset_test/02_basic2_test.c \
+		tests/memset_test/03_basic3_test.c \
+		tests/memset_test/04_null_test.c
 
 
 TEST_OBJS = ${TEST_SRCS:.c=.o}
