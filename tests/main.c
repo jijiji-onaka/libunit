@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 12:09:45 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/05/10 21:48:55 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/05/10 21:55:28 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static int	print_result(bool ok_or_ko)
 		return (-1);
 }
 
-# define TEST_NUM 2
+# define TEST_NUM 10
 
 int	main(void)
 {

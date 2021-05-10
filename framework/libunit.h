@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libunit.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmatsuka <rmatsuka@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 16:36:33 by rmatsuka          #+#    #+#             */
-/*   Updated: 2021/05/09 20:51:09 by rmatsuka         ###   ########.fr       */
+/*   Updated: 2021/05/10 22:04:54 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,6 @@ void	load_test(t_unit_test **list, char *name, int (*f)(void));
 int		launch_tests(t_unit_test **list);
 
 /* malloc失敗した場合など */
-void	exit_fatal(void);
+void	exit_fatal(int line, char *file);
 
 #endif

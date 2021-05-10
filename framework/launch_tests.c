@@ -6,12 +6,11 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 11:35:59 by rmatsuka          #+#    #+#             */
-/*   Updated: 2021/05/10 21:46:28 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/05/10 22:12:48 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libunit.h"
-
 
 static void ft1(char *s, int fd)
 {
@@ -20,6 +19,39 @@ static void ft1(char *s, int fd)
 	write(fd, s, ft_strlen((const char *)s));
 }
 
+void	ft_putchar_fd_1(char c, int fd)
+{
+	write(fd, &c, 1);
+}
+
+void	ft_putnbr_fd_1(int n, int fd)
+{
+	long	num;
+
+	num = (long)n;
+	if (num < 0)
+	{
+		ft_putchar_fd_1('-', fd);
+		num = -num;
+	}
+	if (num >= 10)
+	{
+		ft_putnbr_fd_1(num / 10, fd);
+		ft_putnbr_fd_1(num % 10, fd);
+	}
+	else
+		ft_putchar_fd_1(num + '0', fd);
+}
+
+// exit_fatal(__LINE__, __FILE__);
+void	exit_fatal(int line, char *file)
+{
+	write(STDERR_FILENO, "STDLIB ERROR\n", 13);
+	ft1(file, STDERR_FILENO);
+	write(STDERR_FILENO, ":", 1);
+	ft_putnbr_fd_1(line, STDERR_FILENO);
+	write(STDERR_FILENO, "\n", 1);
+}
 
 static int  check_status(int status)
 {
@@ -65,13 +97,13 @@ static int run_test(int (*f)(void))
     int pid;
     int status;
 
-    (void)f;
+    // (void)f;
     // signal(SIGSEGV, NULL);
     // signal(SIGBUS, NULL);
     pid = fork();
     status = 0;
     if (pid < 0)                // fail
-        ft1("error\n", STDOUT_FILENO);   // error処理？
+        exit_fatal(__LINE__, __FILE__);   // error処理？
     else if (pid == 0)          // child process
     {
         // char *ptr = NULL;
@@ -97,16 +129,15 @@ int launch_tests(t_unit_test **list)
     success_cnt = 0;
     while (testlist)
     {
-        // printf("> ");
-        // printf("%s\n", testlist->name);
-        // printf(" : ");
-        // fflush(stdout);
         ft1("> ", STDOUT_FILENO);
         ft1(testlist->name, STDOUT_FILENO);
         ft1(" : ", STDOUT_FILENO);
+        // printf("> %s : ", testlist->name);
+        // fflush(stdout);
         success_cnt += run_test(testlist->f);
         tests_cnt++;
         testlist = testlist->next;
     }
-    return (0);
+    // printf("> %s : ", "ok\n");
+    return (1);
 }
