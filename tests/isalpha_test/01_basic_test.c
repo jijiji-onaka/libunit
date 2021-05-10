@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   02_false_test.c                                    :+:      :+:    :+:   */
+/*   01_basic_test.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmatsuka <rmatsuka@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/10 10:13:51 by rmatsuka          #+#    #+#             */
-/*   Updated: 2021/05/10 10:14:15 by rmatsuka         ###   ########.fr       */
+/*   Created: 2021/05/10 10:52:32 by rmatsuka          #+#    #+#             */
+/*   Updated: 2021/05/10 10:53:46 by rmatsuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../tester.h"
 
-int	isalnum_false_test(void)
+int	isalpha_basic_test(void)
 {
-	if (ft_isalnum(4200) == isalnum(4200))
+	if (ft_isalpha(42) == isalpha(42))
 		return (0);
 	else
 		return (-1);

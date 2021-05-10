@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   00_launcher.c                                      :+:      :+:    :+:   */
+/*   01_basic_test.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmatsuka <rmatsuka@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/10 10:08:57 by rmatsuka          #+#    #+#             */
-/*   Updated: 2021/05/10 11:48:57 by rmatsuka         ###   ########.fr       */
+/*   Created: 2021/05/10 10:52:32 by rmatsuka          #+#    #+#             */
+/*   Updated: 2021/05/10 11:12:06 by rmatsuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../tester.h"
 
-int	isalnum_launcher(void)
+int	isdigit_basic_test(void)
 {
-	t_unit_test	*testlist;
-
-	testlist = NULL;
-	print_title("isalnum test");
-	load_test(&testlist, "Basic Test          ", &isalnum_basic_test);
-	load_test(&testlist, "Basic2 Test         ", &isalnum_basic2_test);
-	load_test(&testlist, "All Test            ", &isalnum_all_test);
-	return(launch_tests(&testlist));
+	if (ft_isdigit(42) == isdigit(42))
+		return (0);
+	else
+		return (-1);
 }

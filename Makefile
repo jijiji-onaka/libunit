@@ -6,7 +6,7 @@
 #    By: rmatsuka <rmatsuka@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/09 14:16:52 by tjinichi          #+#    #+#              #
-#    Updated: 2021/05/10 10:23:09 by rmatsuka         ###   ########.fr        #
+#    Updated: 2021/05/10 11:40:50 by rmatsuka         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,8 +46,24 @@ TEST_SRCS =	tests/main.c \
 		tests/calloc_test/04_minus_test.c \
 		tests/isalnum_test/00_launcher.c \
 		tests/isalnum_test/01_basic_test.c \
-		tests/isalnum_test/02_false_test.c \
-		tests/isalnum_test/03_allnum_test.c
+		tests/isalnum_test/02_basic2_test.c \
+		tests/isalnum_test/03_all_test.c \
+		tests/isalpha_test/00_launcher.c \
+		tests/isalpha_test/01_basic_test.c \
+		tests/isalpha_test/02_basic2_test.c \
+		tests/isalpha_test/03_all_test.c \
+		tests/isascii_test/00_launcher.c \
+		tests/isascii_test/01_basic_test.c \
+		tests/isascii_test/02_basic2_test.c \
+		tests/isascii_test/03_all_test.c \
+		tests/isdigit_test/00_launcher.c \
+		tests/isdigit_test/01_basic_test.c \
+		tests/isdigit_test/02_basic2_test.c \
+		tests/isdigit_test/03_all_test.c \
+		tests/isprint_test/00_launcher.c \
+		tests/isprint_test/01_basic_test.c \
+		tests/isprint_test/02_basic2_test.c \
+		tests/isprint_test/03_all_test.c \
 
 
 TEST_OBJS = ${TEST_SRCS:.c=.o}

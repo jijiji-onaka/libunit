@@ -70,20 +70,36 @@ int		calloc_minus_test(void);
 */
 int		isalnum_launcher(void);
 int		isalnum_basic_test(void);
-int		isalnum_false_test(void);
-int		isalnum_allnum_test(void);
+int		isalnum_basic2_test(void);
+int		isalnum_all_test(void);
 /*
 ** ISALPHA TEST
 */
-
+int		isalpha_launcher(void);
+int		isalpha_basic_test(void);
+int		isalpha_basic2_test(void);
+int		isalpha_all_test(void);
+/*
+** ISASCII TEST
+*/
+int		isascii_launcher(void);
+int		isascii_basic_test(void);
+int		isascii_basic2_test(void);
+int		isascii_all_test(void);
 /*
 ** ISDIGIT TEST
 */
-
+int		isdigit_launcher(void);
+int		isdigit_basic_test(void);
+int		isdigit_basic2_test(void);
+int		isdigit_all_test(void);
 /*
 ** ISPRINT TEST
 */
-
+int		isprint_launcher(void);
+int		isprint_basic_test(void);
+int		isprint_basic2_test(void);
+int		isprint_all_test(void);
 /*
 ** ITOA TEST
 */
