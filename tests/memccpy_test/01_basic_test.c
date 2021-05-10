@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   01_basic_test.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmatsuka <rmatsuka@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: rmatsuka < rmatsuka@student.42tokyo.jp>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 19:35:30 by rmatsuka          #+#    #+#             */
-/*   Updated: 2021/05/10 20:50:19 by rmatsuka         ###   ########.fr       */
+/*   Updated: 2021/05/10 23:17:19 by rmatsuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,13 @@
 
 int	memccpy_basic_test(void)
 {
-	char	str[] = "42tokyo";
+	char	*s;
 	char	s1[10];
 	char	s2[10];
 
-	ft_memccpy(s1, str, '2', 3);
-	memccpy(s2, str, '2', 3);
+	s = "hello";
+	ft_memccpy(s1, s, '2', 10);
+	memccpy(s2, s, '2', 10);
 	if (!strcmp(s1, s2))
 		return (0);
 	else

@@ -119,7 +119,11 @@ int		memccpy_null_test(void);
 /*
 ** MEMCHR TEST
 */
-
+int		memchr_launcher(void);
+int		memchr_basic_test(void);
+int		memchr_basic2_test(void);
+int		memchr_basic3_test(void);
+int		memchr_null_test(void);
 /*
 ** MEMCMP TEST
 */

@@ -6,7 +6,7 @@
 /*   By: rmatsuka < rmatsuka@student.42tokyo.jp>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 12:09:45 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/05/10 22:42:08 by rmatsuka         ###   ########.fr       */
+/*   Updated: 2021/05/10 23:00:37 by rmatsuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,8 @@ int	main(void)
 	test_ret += itoa_launcher();
 	puts("");
 	test_ret += memccpy_launcher();
+	puts("");
+	test_ret += memchr_launcher();
 	puts("");
 
 	if (test_ret == TEST_NUM)

@@ -6,7 +6,7 @@
 #    By: rmatsuka < rmatsuka@student.42tokyo.jp>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/09 14:16:52 by tjinichi          #+#    #+#              #
-#    Updated: 2021/05/10 22:43:13 by rmatsuka         ###   ########.fr        #
+#    Updated: 2021/05/10 23:00:07 by rmatsuka         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,7 +73,12 @@ TEST_SRCS =	tests/main.c \
 		tests/memccpy_test/01_basic_test.c \
 		tests/memccpy_test/02_basic2_test.c \
 		tests/memccpy_test/03_basic3_test.c \
-		tests/memccpy_test/04_null_test.c
+		tests/memccpy_test/04_null_test.c \
+		tests/memchr_test/00_launcher.c \
+		tests/memchr_test/01_basic_test.c \
+		tests/memchr_test/02_basic2_test.c \
+		tests/memchr_test/03_basic3_test.c \
+		tests/memchr_test/04_null_test.c
 
 
 TEST_OBJS = ${TEST_SRCS:.c=.o}
