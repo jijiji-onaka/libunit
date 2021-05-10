@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   04_bigsize_test.c                                  :+:      :+:    :+:   */
+/*   00_launcher.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmatsuka <rmatsuka@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/10 08:28:56 by rmatsuka          #+#    #+#             */
-/*   Updated: 2021/05/10 09:19:12 by rmatsuka         ###   ########.fr       */
+/*   Created: 2021/05/10 08:59:45 by rmatsuka          #+#    #+#             */
+/*   Updated: 2021/05/10 09:22:27 by rmatsuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../tester.h"
 
-int	bzero_bigsize_test(void)
+int	calloc_launcher(void)
 {
-	char s1[BIG], s2[BIG];
+	t_unit_test	*testlist;
 
-	memset(s1, 'a', BIG);
-	memset(s2, 'a', BIG);
-
-	ft_bzero(s1, BIG);
-	bzero(s2, BIG);
-	if (!memcmp(s1, s2, BIG))
-		return (0);
-	else
-		return (-1);
+	testlist = NULL;
+	print_title("calloc test");
+	load_test(&testlist, "Basic Test         ", &calloc_basic_test);
+	load_test(&testlist, "Zero Test          ", &calloc_zero_test);
+	load_test(&testlist, "BigSize Test       ", &calloc_bigsize_test);
+	load_test(&testlist, "Minus Test         ", &calloc_minus_test);
+	return(launch_tests(&testlist));
 }

@@ -6,7 +6,7 @@
 #    By: rmatsuka <rmatsuka@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/09 14:16:52 by tjinichi          #+#    #+#              #
-#    Updated: 2021/05/10 08:44:54 by rmatsuka         ###   ########.fr        #
+#    Updated: 2021/05/10 09:28:06 by rmatsuka         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,12 @@ TEST_SRCS =	tests/main.c \
 		tests/bzero_test/02_null_test.c \
 		tests/bzero_test/03_zero_test.c \
 		tests/bzero_test/04_bigsize_test.c \
-		tests/bzero_test/05_minus_test.c
+		tests/bzero_test/05_minus_test.c \
+		tests/calloc_test/00_launcher.c \
+		tests/calloc_test/01_basic_test.c \
+		tests/calloc_test/02_zero_test.c \
+		tests/calloc_test/03_bigsize_test.c \
+		tests/calloc_test/04_minus_test.c 
 
 TEST_OBJS = ${TEST_SRCS:.c=.o}
 

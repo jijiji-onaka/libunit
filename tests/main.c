@@ -6,7 +6,7 @@
 /*   By: rmatsuka <rmatsuka@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 12:09:45 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/05/10 08:40:37 by rmatsuka         ###   ########.fr       */
+/*   Updated: 2021/05/10 09:26:40 by rmatsuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ int	main(void)
 	puts("");
 	test_ret += bzero_launcher();
 	puts("");
+	test_ret += calloc_launcher();
+
 	if (test_ret == TEST_NUM)
 		return (print_result(OK));
 	else

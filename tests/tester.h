@@ -57,9 +57,16 @@ int		bzero_zero_test(void);
 int		bzero_bigsize_test(void);
 int		bzero_minus_test(void);
 /*
+** CALLOC TEST
+*/
+int		calloc_launcher(void);
+int		calloc_basic_test(void);
+int		calloc_zero_test(void);
+int		calloc_bigsize_test(void);
+int		calloc_minus_test(void);
+/*
 **
 */
-
 
 
 # define OK true
@@ -68,5 +75,5 @@ int		bzero_minus_test(void);
 # define BOLD "\033[1m"
 # define COLOR_RESET "\033[0m"
 # define SIZE 100
-
+# define BIG 100000
 #endif
