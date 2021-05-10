@@ -21,6 +21,7 @@
 # include <unistd.h>
 # include <stdbool.h>
 # include <limits.h>
+# include <ctype.h>
 
 void	print_title(char *title);
 /*
@@ -65,8 +66,57 @@ int		calloc_zero_test(void);
 int		calloc_bigsize_test(void);
 int		calloc_minus_test(void);
 /*
+** ISALNUM TEST
+*/
+int		isalnum_launcher(void);
+int		isalnum_basic_test(void);
+int		isalnum_false_test(void);
+int		isalnum_allnum_test(void);
+/*
+** ISALPHA TEST
+*/
+
+/*
+** ISDIGIT TEST
+*/
+
+/*
+** ISPRINT TEST
+*/
+
+/*
+** ITOA TEST
+*/
+
+/*
+** MEMCCPY TEST
+*/
+
+/*
+** MEMCHR TEST
+*/
+
+/*
+** MEMCMP TEST
+*/
+
+/*
+** MEMCPY TEST
+*/
+
+/*
+** MEMMOVE TEST
+*/
+
+/*
+** MEMSET TEST
+*/
+
+/*
 **
 */
+
+
 
 
 # define OK true

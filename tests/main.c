@@ -6,7 +6,7 @@
 /*   By: rmatsuka <rmatsuka@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 12:09:45 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/05/10 09:26:40 by rmatsuka         ###   ########.fr       */
+/*   Updated: 2021/05/10 10:21:27 by rmatsuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,9 @@ int	main(void)
 	test_ret += bzero_launcher();
 	puts("");
 	test_ret += calloc_launcher();
+	puts("");
+	test_ret += isalnum_launcher();
+	puts("");
 
 	if (test_ret == TEST_NUM)
 		return (print_result(OK));
