@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   launch_tests.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmatsuka <rmatsuka@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 11:35:59 by rmatsuka          #+#    #+#             */
-/*   Updated: 2021/05/11 15:11:03 by rmatsuka         ###   ########.fr       */
+/*   Updated: 2021/05/11 20:18:55 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int	check_status(int status)
 		}
 		else if (WEXITSTATUS(status) == 255)
 		{
-			ft_put_s("\033[31m[KO]\033[0mn", STDOUT_FILENO);
+			ft_put_s("\033[31m[KO]\033[0m\n", STDOUT_FILENO);
 			return (0);
 		}
 	}
