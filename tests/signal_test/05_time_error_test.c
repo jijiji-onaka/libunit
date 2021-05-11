@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   00_launcher.c                                      :+:      :+:    :+:   */
+/*   05_time_error_test.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmatsuka <rmatsuka@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/10 19:33:28 by rmatsuka          #+#    #+#             */
-/*   Updated: 2021/05/12 07:39:05 by rmatsuka         ###   ########.fr       */
+/*   Created: 2021/05/12 08:02:43 by rmatsuka          #+#    #+#             */
+/*   Updated: 2021/05/12 08:06:59 by rmatsuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../tester.h"
 
-int	memccpy_launcher(void)
+static bool	do_time_error()
 {
-	t_unit_test	*testlist;
+	while (1)
+		;
+}
 
-	testlist = NULL;
-	print_title("memccpy test");
-	load_test(&testlist, "Basic1 Test         ", &memccpy_basic1_test);
-	load_test(&testlist, "Basic2 Test         ", &memccpy_basic2_test);
-	load_test(&testlist, "Basic3 Test         ", &memccpy_basic3_test);
-	load_test(&testlist, "Null Test           ", &memccpy_null_test);
-	return(launch_tests(&testlist));
+int	signal_time_error_test(void)
+{
+	if (do_time_error())
+		return (0);
+	else
+		return (-1);
 }

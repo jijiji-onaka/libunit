@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   launch_tests.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: rmatsuka <rmatsuka@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 11:35:59 by rmatsuka          #+#    #+#             */
-/*   Updated: 2021/05/11 20:18:55 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/05/12 08:26:57 by rmatsuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,24 +16,27 @@ static int	check_status(int status)
 {
 	if (WIFEXITED(status))
 	{
-		if (!WEXITSTATUS(status))
+		if (WEXITSTATUS(status) == 0)
 		{
 			ft_put_s("\033[32m[OK]\033[0m\n", STDOUT_FILENO);
 			return (1);
 		}
 		else if (WEXITSTATUS(status) == 255)
-		{
 			ft_put_s("\033[31m[KO]\033[0m\n", STDOUT_FILENO);
-			return (0);
-		}
+
 	}
 	else if (WIFSIGNALED(status))
 	{
 		if (WTERMSIG(status) == SIGSEGV)
 			ft_put_s("\033[31m[SEGV]\033[0m\n", STDERR_FILENO);
-		if (WTERMSIG(status) == SIGBUS)
+		else if (WTERMSIG(status) == SIGBUS)
 			ft_put_s("\033[31m[BUS]\033[0m\n", STDERR_FILENO);
-		return (0);
+		else if (WTERMSIG(status) == SIGALRM)
+			ft_put_s("\033[31m[TIME]\033[0m\n", STDERR_FILENO);
+		else if (WTERMSIG(status) == SIGABRT)
+			ft_put_s("\033[31m[SIGA]\033[0m\n", STDERR_FILENO);
+		else
+			ft_put_s("\033[31m[CRASH]\033[0m\n", STDERR_FILENO);
 	}
 	return (0);
 }
@@ -44,13 +47,14 @@ static int	run_test(int (*f)(void))
 	int	status;
 
 	pid = fork();
-	status = 0;
 	if (pid < 0)
 		exit_fatal(__LINE__, __FILE__);
 	else if (pid == 0)
+	{
+		alarm(2);
 		exit(f());
-	else
-		wait(&status);
+	}
+	wait(&status);
 	return (check_status(status));
 }
 
@@ -75,6 +79,7 @@ int	launch_tests(t_unit_test **list)
 		tests_cnt++;
 		testlist = testlist->next;
 	}
+	testlist_clear(list);
 	printf("\033[36m%d/%d tests passed\033[49m", success_cnt, tests_cnt);
 	if (tests_cnt == success_cnt)
 	{

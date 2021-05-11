@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   00_launcher.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmatsuka < rmatsuka@student.42tokyo.jp>    +#+  +:+       +#+        */
+/*   By: rmatsuka <rmatsuka@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 19:33:28 by rmatsuka          #+#    #+#             */
-/*   Updated: 2021/05/11 08:31:03 by rmatsuka         ###   ########.fr       */
+/*   Updated: 2021/05/12 07:40:00 by rmatsuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	memset_launcher(void)
 
 	testlist = NULL;
 	print_title("memset test");
-	load_test(&testlist, "Basic Test          ", &memset_basic_test);
+	load_test(&testlist, "Basic1 Test         ", &memset_basic1_test);
 	load_test(&testlist, "Basic2 Test         ", &memset_basic2_test);
 	load_test(&testlist, "Basic3 Test         ", &memset_basic3_test);
 	load_test(&testlist, "Null Test           ", &memset_null_test);

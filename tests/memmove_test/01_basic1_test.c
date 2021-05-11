@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   00_launcher.c                                      :+:      :+:    :+:   */
+/*   01_basic1_test.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmatsuka <rmatsuka@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/10 19:33:28 by rmatsuka          #+#    #+#             */
-/*   Updated: 2021/05/12 07:39:05 by rmatsuka         ###   ########.fr       */
+/*   Created: 2021/05/10 19:35:30 by rmatsuka          #+#    #+#             */
+/*   Updated: 2021/05/12 07:32:24 by rmatsuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../tester.h"
 
-int	memccpy_launcher(void)
+int	memmove_basic1_test(void)
 {
-	t_unit_test	*testlist;
+	char	*s1;
+	char	*s2;
+	int		ans;
 
-	testlist = NULL;
-	print_title("memccpy test");
-	load_test(&testlist, "Basic1 Test         ", &memccpy_basic1_test);
-	load_test(&testlist, "Basic2 Test         ", &memccpy_basic2_test);
-	load_test(&testlist, "Basic3 Test         ", &memccpy_basic3_test);
-	load_test(&testlist, "Null Test           ", &memccpy_null_test);
-	return(launch_tests(&testlist));
+	s1 = malloc(sizeof(char) * SIZE);
+	s2 = malloc(sizeof(char) * SIZE);
+	memset(s1, 'a', SIZE);
+	memset(s2, 'a', SIZE);
+	ft_memmove(s1, "hello", 5);
+	memmove(s2, "hello", 5);
+	if (!strcmp(s1, s2))
+		ans = 0;
+	else
+		ans = -1;
+	free(s1);
+	free(s2);
+	return (ans);
 }

@@ -32,6 +32,9 @@ int		signal_true_test(void);
 int		signal_false_test(void);
 int		signal_segfault_test(void);
 int		signal_bus_error_test(void);
+int		signal_time_error_test(void);
+int		signal_sigabrt_test(void);
+int		signal_crash_test(void);
 /*
 ** STRLEN TEST
 */
@@ -69,35 +72,35 @@ int		calloc_minus_test(void);
 ** ISALNUM TEST
 */
 int		isalnum_launcher(void);
-int		isalnum_basic_test(void);
+int		isalnum_basic1_test(void);
 int		isalnum_basic2_test(void);
 int		isalnum_all_test(void);
 /*
 ** ISALPHA TEST
 */
 int		isalpha_launcher(void);
-int		isalpha_basic_test(void);
+int		isalpha_basic1_test(void);
 int		isalpha_basic2_test(void);
 int		isalpha_all_test(void);
 /*
 ** ISASCII TEST
 */
 int		isascii_launcher(void);
-int		isascii_basic_test(void);
+int		isascii_basic1_test(void);
 int		isascii_basic2_test(void);
 int		isascii_all_test(void);
 /*
 ** ISDIGIT TEST
 */
 int		isdigit_launcher(void);
-int		isdigit_basic_test(void);
+int		isdigit_basic1_test(void);
 int		isdigit_basic2_test(void);
 int		isdigit_all_test(void);
 /*
 ** ISPRINT TEST
 */
 int		isprint_launcher(void);
-int		isprint_basic_test(void);
+int		isprint_basic1_test(void);
 int		isprint_basic2_test(void);
 int		isprint_all_test(void);
 /*
@@ -112,7 +115,7 @@ int		itoa_zero_test(void);
 ** MEMCCPY TEST
 */
 int		memccpy_launcher(void);
-int		memccpy_basic_test(void);
+int		memccpy_basic1_test(void);
 int		memccpy_basic2_test(void);
 int		memccpy_basic3_test(void);
 int		memccpy_null_test(void);
@@ -120,7 +123,7 @@ int		memccpy_null_test(void);
 ** MEMCHR TEST
 */
 int		memchr_launcher(void);
-int		memchr_basic_test(void);
+int		memchr_basic1_test(void);
 int		memchr_basic2_test(void);
 int		memchr_basic3_test(void);
 int		memchr_null_test(void);
@@ -128,7 +131,7 @@ int		memchr_null_test(void);
 ** MEMCMP TEST
 */
 int	    memcmp_launcher(void);
-int	    memcmp_basic_test(void);
+int	    memcmp_basic1_test(void);
 int	    memcmp_basic2_test(void);
 int     memcmp_basic3_test(void);
 int	    memcmp_null_test(void);
@@ -137,7 +140,7 @@ int	    memcmp_null_test(void);
 ** MEMCPY TEST
 */
 int	    memcpy_launcher(void);
-int	    memcpy_basic_test(void);
+int	    memcpy_basic1_test(void);
 int	    memcpy_basic2_test(void);
 int     memcpy_basic3_test(void);
 int	    memcpy_null_test(void);
@@ -145,7 +148,7 @@ int	    memcpy_null_test(void);
 ** MEMMOVE TEST
 */
 int	    memmove_launcher(void);
-int	    memmove_basic_test(void);
+int	    memmove_basic1_test(void);
 int	    memmove_basic2_test(void);
 int     memmove_basic3_test(void);
 int	    memmove_null_test(void);
@@ -153,7 +156,7 @@ int	    memmove_null_test(void);
 ** MEMSET TEST
 */
 int	    memset_launcher(void);
-int	    memset_basic_test(void);
+int	    memset_basic1_test(void);
 int	    memset_basic2_test(void);
 int     memset_basic3_test(void);
 int	    memset_null_test(void);

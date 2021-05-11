@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   00_launcher.c                                      :+:      :+:    :+:   */
+/*   07_crash_test.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmatsuka <rmatsuka@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/10 19:33:28 by rmatsuka          #+#    #+#             */
-/*   Updated: 2021/05/12 07:39:05 by rmatsuka         ###   ########.fr       */
+/*   Created: 2021/05/12 08:43:51 by rmatsuka          #+#    #+#             */
+/*   Updated: 2021/05/12 08:55:03 by rmatsuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../tester.h"
 
-int	memccpy_launcher(void)
+static bool	do_crash()
 {
-	t_unit_test	*testlist;
+	int	i;
 
-	testlist = NULL;
-	print_title("memccpy test");
-	load_test(&testlist, "Basic1 Test         ", &memccpy_basic1_test);
-	load_test(&testlist, "Basic2 Test         ", &memccpy_basic2_test);
-	load_test(&testlist, "Basic3 Test         ", &memccpy_basic3_test);
-	load_test(&testlist, "Null Test           ", &memccpy_null_test);
-	return(launch_tests(&testlist));
+	i = 0;
+	if (1 / i)
+		return (true);
+	else
+		return (false);
+
+}
+
+int	signal_crash_test(void)
+{
+	if (do_crash())
+		return (0);
+	else
+		return (-1);
 }

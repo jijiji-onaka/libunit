@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+         #
+#    By: rmatsuka <rmatsuka@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/09 14:16:52 by tjinichi          #+#    #+#              #
-#    Updated: 2021/05/11 20:14:35 by tjinichi         ###   ########.fr        #
+#    Updated: 2021/05/12 08:47:22 by rmatsuka         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,9 @@ TEST_SRCS =	tests/main.c \
 		tests/signal_test/02_false_test.c \
 		tests/signal_test/03_segfault_test.c \
 		tests/signal_test/04_bus_error_test.c \
+		tests/signal_test/05_time_error_test.c \
+		tests/signal_test/06_sigabrt_test.c \
+		tests/signal_test/07_crash_test.c \
 		tests/strlen_test/00_launcher.c \
 		tests/strlen_test/01_basic_test.c \
 		tests/strlen_test/02_null_test.c \
@@ -45,23 +48,23 @@ TEST_SRCS =	tests/main.c \
 		tests/calloc_test/03_bigsize_test.c \
 		tests/calloc_test/04_minus_test.c \
 		tests/isalnum_test/00_launcher.c \
-		tests/isalnum_test/01_basic_test.c \
+		tests/isalnum_test/01_basic1_test.c \
 		tests/isalnum_test/02_basic2_test.c \
 		tests/isalnum_test/03_all_test.c \
 		tests/isalpha_test/00_launcher.c \
-		tests/isalpha_test/01_basic_test.c \
+		tests/isalpha_test/01_basic1_test.c \
 		tests/isalpha_test/02_basic2_test.c \
 		tests/isalpha_test/03_all_test.c \
 		tests/isascii_test/00_launcher.c \
-		tests/isascii_test/01_basic_test.c \
+		tests/isascii_test/01_basic1_test.c \
 		tests/isascii_test/02_basic2_test.c \
 		tests/isascii_test/03_all_test.c \
 		tests/isdigit_test/00_launcher.c \
-		tests/isdigit_test/01_basic_test.c \
+		tests/isdigit_test/01_basic1_test.c \
 		tests/isdigit_test/02_basic2_test.c \
 		tests/isdigit_test/03_all_test.c \
 		tests/isprint_test/00_launcher.c \
-		tests/isprint_test/01_basic_test.c \
+		tests/isprint_test/01_basic1_test.c \
 		tests/isprint_test/02_basic2_test.c \
 		tests/isprint_test/03_all_test.c \
 		tests/itoa_test/00_launcher.c \
@@ -70,32 +73,32 @@ TEST_SRCS =	tests/main.c \
 		tests/itoa_test/03_intmin_test.c \
 		tests/itoa_test/04_zero_test.c \
 		tests/memccpy_test/00_launcher.c \
-		tests/memccpy_test/01_basic_test.c \
+		tests/memccpy_test/01_basic1_test.c \
 		tests/memccpy_test/02_basic2_test.c \
 		tests/memccpy_test/03_basic3_test.c \
 		tests/memccpy_test/04_null_test.c \
 		tests/memchr_test/00_launcher.c \
-		tests/memchr_test/01_basic_test.c \
+		tests/memchr_test/01_basic1_test.c \
 		tests/memchr_test/02_basic2_test.c \
 		tests/memchr_test/03_basic3_test.c \
 		tests/memchr_test/04_null_test.c \
 		tests/memcmp_test/00_launcher.c \
-		tests/memcmp_test/01_basic_test.c \
+		tests/memcmp_test/01_basic1_test.c \
 		tests/memcmp_test/02_basic2_test.c \
 		tests/memcmp_test/03_basic3_test.c \
 		tests/memcmp_test/04_null_test.c \
 		tests/memcpy_test/00_launcher.c \
-		tests/memcpy_test/01_basic_test.c \
+		tests/memcpy_test/01_basic1_test.c \
 		tests/memcpy_test/02_basic2_test.c \
 		tests/memcpy_test/03_basic3_test.c \
 		tests/memcpy_test/04_null_test.c \
 		tests/memmove_test/00_launcher.c \
-		tests/memmove_test/01_basic_test.c \
+		tests/memmove_test/01_basic1_test.c \
 		tests/memmove_test/02_basic2_test.c \
 		tests/memmove_test/03_basic3_test.c \
 		tests/memmove_test/04_null_test.c \
 		tests/memset_test/00_launcher.c \
-		tests/memset_test/01_basic_test.c \
+		tests/memset_test/01_basic1_test.c \
 		tests/memset_test/02_basic2_test.c \
 		tests/memset_test/03_basic3_test.c \
 		tests/memset_test/04_null_test.c \
