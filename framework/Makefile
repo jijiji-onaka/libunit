@@ -3,17 +3,20 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rmatsuka < rmatsuka@student.42tokyo.jp>    +#+  +:+       +#+         #
+#    By: rmatsuka <rmatsuka@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/08 16:29:38 by rmatsuka          #+#    #+#              #
-#    Updated: 2021/05/11 11:29:19 by rmatsuka         ###   ########.fr        #
+#    Updated: 2021/05/11 13:34:11 by rmatsuka         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME =		libunit.a
 SRCS =		launch_tests.c \
 			load_test.c \
-			exit_fatal.c
+			exit_fatal.c \
+			utilities.c \
+			testlist_clear.c
+
 
 OBJS = 		$(SRCS:.c=.o)
 

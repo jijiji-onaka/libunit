@@ -3,56 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   launch_tests.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmatsuka < rmatsuka@student.42tokyo.jp>    +#+  +:+       +#+        */
+/*   By: rmatsuka <rmatsuka@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 11:35:59 by rmatsuka          #+#    #+#             */
-/*   Updated: 2021/05/11 12:16:30 by rmatsuka         ###   ########.fr       */
+/*   Updated: 2021/05/11 13:33:23 by rmatsuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libunit.h"
 
-void ft_put_s(char *s, int fd)
-{
-    int i;
-
-	if (s == NULL)
-		return ;
-    i = 0;
-    while (s[i])
-        i++;
-	write(fd, s, i);
-}
-
-void	ft_put_c(char c, int fd)
-{
-	write(fd, &c, 1);
-}
-
-void	ft_put_d(int n, int fd)
-{
-	long	num;
-
-	num = (long)n;
-	if (num < 0)
-	{
-		ft_put_c('-', fd);
-		num = -num;
-	}
-	if (num >= 10)
-	{
-		ft_put_d(num / 10, fd);
-		ft_put_d(num % 10, fd);
-	}
-	else
-		ft_put_c(num + '0', fd);
-}
-
 static int  check_status(int status)
 {
     if (WIFEXITED(status))
     {
-        if (!WEXITSTATUS(status))        // success
+        if (!WEXITSTATUS(status))
         {
             ft_put_s("[OK]\n", STDOUT_FILENO);
             return (1);
@@ -91,7 +55,10 @@ static int run_test(int (*f)(void))
         exit(f());
     }
     else
+    {
+        if() // waitの返り値チェック
         wait(&status);
+    }
     return (check_status(status));
 }
 
@@ -118,8 +85,13 @@ int launch_tests(t_unit_test **list)
     }
     printf("\x1b[36m%d/%d tests checked\x1b[49m", success_cnt, tests_cnt);
     if (tests_cnt == success_cnt)
-        printf("  \x1b[32m%s\x1b[39m  ", "OK\n");
+    {
+        printf("  \x1b[32mOK\x1b[39m\n");
+        return (1);
+    }
     else
-        printf("  \x1b[31m%s\x1b[39m ", "KO\n");
-    return (1);
+    {
+        printf("  \x1b[31mKO\x1b[39m\n");
+        return  (0);
+    }
 }
