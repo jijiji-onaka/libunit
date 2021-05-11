@@ -19,28 +19,28 @@ static void ft1(char *s, int fd)
 	write(fd, s, strlen((const char *)s));
 }
 
-void	ft_putchar_fd_1(char c, int fd)
+void	ft_put_c(char c, int fd)
 {
 	write(fd, &c, 1);
 }
 
-void	ft_putnbr_fd_1(int n, int fd)
+void	ft_put_d(int n, int fd)
 {
 	long	num;
 
 	num = (long)n;
 	if (num < 0)
 	{
-		ft_putchar_fd_1('-', fd);
+		ft_put_c('-', fd);
 		num = -num;
 	}
 	if (num >= 10)
 	{
-		ft_putnbr_fd_1(num / 10, fd);
-		ft_putnbr_fd_1(num % 10, fd);
+		ft_put_d(num / 10, fd);
+		ft_put_d(num % 10, fd);
 	}
 	else
-		ft_putchar_fd_1(num + '0', fd);
+		ft_put_c(num + '0', fd);
 }
 
 void	exit_fatal(int line, char *file)
@@ -48,7 +48,7 @@ void	exit_fatal(int line, char *file)
 	write(STDERR_FILENO, "STDLIB ERROR\n", 13);
 	ft1(file, STDERR_FILENO);
 	write(STDERR_FILENO, ":", 1);
-	ft_putnbr_fd_1(line, STDERR_FILENO);
+	ft_put_d(line, STDERR_FILENO);
 	write(STDERR_FILENO, "\n", 1);
 }
 

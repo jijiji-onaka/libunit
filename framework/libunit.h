@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libunit.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: rmatsuka < rmatsuka@student.42tokyo.jp>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 16:36:33 by rmatsuka          #+#    #+#             */
-/*   Updated: 2021/05/10 22:04:54 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/05/11 11:47:58 by rmatsuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,11 @@
 #include <unistd.h>
 #include <stdio.h>
 #include "../libft/libft.h"
+#define COLOR "\x1b[47m"
+#define RESET "\x1b[49m"
+#define OKC "\x1b[32m"
+#define KOC "\x1b[30m"
 
-/* 1ノード1テストのリスト */
-/* これを宣言する大元でNULL初期化しないといけない */
 typedef struct	s_unit_list
 {
 	int		(*f)(void);
@@ -29,13 +31,12 @@ typedef struct	s_unit_list
 	struct 	s_unit_list	*next;
 }				t_unit_test;
 
-/* 受け取ったテストをリストに追加 */
 void	load_test(t_unit_test **list, char *name, int (*f)(void));
-
-/* リストのテスト実行する */
 int		launch_tests(t_unit_test **list);
-
-/* malloc失敗した場合など */
 void	exit_fatal(int line, char *file);
+void	ft_put_c(char c, int fd);
+void	ft_put_d(int n, int fd);
+void 	ft_put_s(char *s, int fd);
+
 
 #endif

@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   04_null_test.c                                     :+:      :+:    :+:   */
+/*   exit_fatal.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmatsuka < rmatsuka@student.42tokyo.jp>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/10 19:35:30 by rmatsuka          #+#    #+#             */
-/*   Updated: 2021/05/11 11:19:10 by rmatsuka         ###   ########.fr       */
+/*   Created: 2021/05/11 11:28:45 by rmatsuka          #+#    #+#             */
+/*   Updated: 2021/05/11 11:38:14 by rmatsuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./../tester.h"
+#include "libunit.h"
 
-int	memcmp_null_test(void)
+void	exit_fatal(int line, char *file)
 {
-	char	*s1;
-	int		ans1;
-	int		ans2;
-
-	s1 = "hello";
-	ans1 = ft_memcmp(s1, NULL, 10);
-	ans2 = memcmp(s1, NULL, 10);
-	if (ans1 == ans2)
-		return (0);
-	else
-		return (-1);
+	write(STDERR_FILENO, "STDLIB ERROR\n", 13);
+	ft_put_s(file, STDERR_FILENO);
+	write(STDERR_FILENO, ":", 1);
+	ft_put_d(line, STDERR_FILENO);
+	write(STDERR_FILENO, "\n", 1);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   load_test.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: rmatsuka < rmatsuka@student.42tokyo.jp>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 11:24:34 by rmatsuka          #+#    #+#             */
-/*   Updated: 2021/05/10 21:38:30 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/05/11 11:30:27 by rmatsuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,11 @@ void    load_test(t_unit_test **list, char *test_name, int (*f)(void))
     if (*list == NULL)
     {
         *list = malloc(sizeof(t_unit_test));
+        if (*list == NULL)
+        {
+            exit_fatal(__LINE__, __FILE__);
+            return ;
+        }
         (*list)->name = test_name;
         (*list)->f = f;
         (*list)->next = NULL;
@@ -31,7 +36,10 @@ void    load_test(t_unit_test **list, char *test_name, int (*f)(void))
         testlist = testlist->next;
     testlist->next = malloc(sizeof(t_unit_test));
     if (testlist->next == NULL)
+    {
+        exit_fatal(__LINE__, __FILE__);
         return ;
+    }
     testlist = testlist->next;
     testlist->name = test_name;
     testlist->f = f;
