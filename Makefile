@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rmatsuka < rmatsuka@student.42tokyo.jp>    +#+  +:+       +#+         #
+#    By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/09 14:16:52 by tjinichi          #+#    #+#              #
-#    Updated: 2021/05/11 08:31:34 by rmatsuka         ###   ########.fr        #
+#    Updated: 2021/05/11 20:14:35 by tjinichi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -98,7 +98,92 @@ TEST_SRCS =	tests/main.c \
 		tests/memset_test/01_basic_test.c \
 		tests/memset_test/02_basic2_test.c \
 		tests/memset_test/03_basic3_test.c \
-		tests/memset_test/04_null_test.c
+		tests/memset_test/04_null_test.c \
+		tests/split_test/00_launcher.c \
+		tests/split_test/01_basic_test.c \
+		tests/split_test/02_empty1_test.c \
+		tests/split_test/03_empty2_test.c \
+		tests/split_test/04_empty3_test.c \
+		tests/split_test/05_same_str_test.c \
+		tests/split_test/06_null_test.c \
+		tests/strchr_test/00_launcher.c \
+		tests/strchr_test/01_basic_test.c \
+		tests/strchr_test/02_empty1_test.c \
+		tests/strchr_test/03_empty2_test.c \
+		tests/strchr_test/04_empty3_test.c \
+		tests/strchr_test/05_match_head_test.c \
+		tests/strchr_test/06_match_tail_test.c \
+		tests/strdup_test/00_launcher.c \
+		tests/strdup_test/01_basic_test.c \
+		tests/strdup_test/02_empty_test.c \
+		tests/strdup_test/03_long_string_test.c \
+		tests/strjoin_test/00_launcher.c \
+		tests/strjoin_test/01_basic_test.c \
+		tests/strjoin_test/02_empty1_test.c \
+		tests/strjoin_test/03_empty2_test.c \
+		tests/strjoin_test/04_empty3_test.c \
+		tests/strjoin_test/05_null1_test.c \
+		tests/strjoin_test/06_null2_test.c \
+		tests/strjoin_test/07_null3_test.c \
+		tests/strlcat_test/00_launcher.c \
+		tests/strlcat_test/01_basic1_test.c \
+		tests/strlcat_test/02_basic2_test.c \
+		tests/strlcat_test/03_basic3_test.c \
+		tests/strlcat_test/04_basic4_test.c \
+		tests/strlcat_test/05_basic5_test.c \
+		tests/strlcat_test/06_null1_test.c \
+		tests/strlcat_test/07_null2_test.c \
+		tests/strlcpy_test/00_launcher.c \
+		tests/strlcpy_test/01_basic1_test.c \
+		tests/strlcpy_test/02_basic2_test.c \
+		tests/strlcpy_test/03_basic3_test.c \
+		tests/strlcpy_test/04_basic4_test.c \
+		tests/strlcpy_test/05_basic5_test.c \
+		tests/strlcpy_test/06_null1_test.c \
+		tests/strlcpy_test/07_null2_test.c \
+		tests/strmapi_test/00_launcher.c \
+		tests/strmapi_test/01_basic_test.c \
+		tests/strmapi_test/02_null1_test.c \
+		tests/strmapi_test/03_null2_test.c \
+		tests/strmapi_test/04_null3_test.c \
+		tests/strncmp_test/00_launcher.c \
+		tests/strncmp_test/01_basic1_test.c \
+		tests/strncmp_test/02_basic2_test.c \
+		tests/strncmp_test/03_basic3_test.c \
+		tests/strncmp_test/04_basic4_test.c \
+		tests/strncmp_test/05_null1_test.c \
+		tests/strncmp_test/06_null2_test.c \
+		tests/strncmp_test/07_null3_test.c \
+		tests/strnstr_test/00_launcher.c \
+		tests/strnstr_test/01_basic1_test.c \
+		tests/strnstr_test/02_basic2_test.c \
+		tests/strnstr_test/03_basic3_test.c \
+		tests/strnstr_test/04_basic4_test.c \
+		tests/strnstr_test/05_null_test.c \
+		tests/strrchr_test/00_launcher.c \
+		tests/strrchr_test/01_basic_test.c \
+		tests/strrchr_test/02_empty1_test.c \
+		tests/strrchr_test/03_empty2_test.c \
+		tests/strrchr_test/04_empty3_test.c \
+		tests/strrchr_test/05_match_head_test.c \
+		tests/strrchr_test/06_match_tail_test.c \
+		tests/strtrim_test/00_launcher.c \
+		tests/strtrim_test/01_basic1_test.c \
+		tests/strtrim_test/02_basic2_test.c \
+		tests/strtrim_test/03_basic3_test.c \
+		tests/strtrim_test/04_same_test.c \
+		tests/strtrim_test/05_null1_test.c \
+		tests/strtrim_test/06_null2_test.c \
+		tests/strtrim_test/07_null3_test.c \
+		tests/substr_test/00_launcher.c \
+		tests/substr_test/01_basic1_test.c \
+		tests/substr_test/02_basic2_test.c \
+		tests/substr_test/03_basic3_test.c \
+		tests/substr_test/04_null_test.c \
+		tests/tolower_test/00_launcher.c \
+		tests/tolower_test/01_all_test.c \
+		tests/toupper_test/00_launcher.c \
+		tests/toupper_test/01_all_test.c \
 
 
 TEST_OBJS = ${TEST_SRCS:.c=.o}

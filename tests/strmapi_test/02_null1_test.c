@@ -1,25 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   00_launcher.c                                      :+:      :+:    :+:   */
+/*   02_null1_test.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/09 13:28:33 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/05/11 18:15:56 by tjinichi         ###   ########.fr       */
+/*   Created: 2021/05/09 14:51:56 by tjinichi          #+#    #+#             */
+/*   Updated: 2021/05/11 18:30:25 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../tester.h"
 
-int	strlen_launcher(void)
+static char	tolower_tmp(unsigned int n, char c)
 {
-	t_unit_test	*testlist;
+	if (c >= 'A' && c <= 'Z')
+		c = c + ('a' - 'A');
+	return (c);
+}
 
-	testlist = NULL;
-	print_title("strlen test");
-	load_test(&testlist, "Basic Test         ", &strlen_basic_test);
-	load_test(&testlist, "Null Test          ", &strlen_null_test);
-	// load_test(&testlist, "Long string Test   ", &strlen_long_string_test);
-	return(launch_tests(&testlist));
+static bool	null_test(void)
+{
+	char		*res;
+
+	res = ft_strmapi(NULL, tolower_tmp);
+	if (res == NULL)
+		return (true);
+	else
+		return (false);
+}
+
+int	strmapi_null1_test(void)
+{
+	if (null_test() == true)
+		return (0);
+	else
+		return (-1);
 }

@@ -6,20 +6,24 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 13:28:33 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/05/11 18:15:56 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/05/11 19:47:01 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../tester.h"
 
-int	strlen_launcher(void)
+int	strtrim_launcher(void)
 {
 	t_unit_test	*testlist;
 
 	testlist = NULL;
-	print_title("strlen test");
-	load_test(&testlist, "Basic Test         ", &strlen_basic_test);
-	load_test(&testlist, "Null Test          ", &strlen_null_test);
-	// load_test(&testlist, "Long string Test   ", &strlen_long_string_test);
+	print_title("strtrim test");
+	load_test(&testlist, "Basic1 Test          ", &strtrim_basic1_test);
+	load_test(&testlist, "Basic2 Test          ", &strtrim_basic2_test);
+	load_test(&testlist, "Basic3 Test          ", &strtrim_basic3_test);
+	load_test(&testlist, "Same String Test     ", &strtrim_same_test);
+	load_test(&testlist, "Null1 Test           ", &strtrim_null1_test);
+	load_test(&testlist, "Null2 Test           ", &strtrim_null2_test);
+	load_test(&testlist, "Null3 Test           ", &strtrim_null3_test);
 	return(launch_tests(&testlist));
 }

@@ -1,25 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   00_launcher.c                                      :+:      :+:    :+:   */
+/*   06_null1_test.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/09 13:28:33 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/05/11 18:15:56 by tjinichi         ###   ########.fr       */
+/*   Created: 2021/05/11 15:43:54 by tjinichi          #+#    #+#             */
+/*   Updated: 2021/05/11 17:24:21 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../tester.h"
 
-int	strlen_launcher(void)
+static bool	null_test()
 {
-	t_unit_test	*testlist;
+	char	src[10] = "42Tokyo";
+	size_t	res1;
+	size_t	res2;
 
-	testlist = NULL;
-	print_title("strlen test");
-	load_test(&testlist, "Basic Test         ", &strlen_basic_test);
-	load_test(&testlist, "Null Test          ", &strlen_null_test);
-	// load_test(&testlist, "Long string Test   ", &strlen_long_string_test);
-	return(launch_tests(&testlist));
+	res1 = ft_strlcat(NULL, src, 0);
+	res2 = strlcat(NULL, src, 0);
+	if (res1 == res2)
+		return (true);
+	else
+		return (false);
+}
+
+int	strlcat_null1_test(void)
+{
+	if (null_test())
+		return (0);
+	else
+		return (-1);
 }

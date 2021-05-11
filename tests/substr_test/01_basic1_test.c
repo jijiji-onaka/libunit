@@ -1,25 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   00_launcher.c                                      :+:      :+:    :+:   */
+/*   01_basic1_test.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/09 13:28:33 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/05/11 18:15:56 by tjinichi         ###   ########.fr       */
+/*   Created: 2021/05/11 15:43:54 by tjinichi          #+#    #+#             */
+/*   Updated: 2021/05/11 19:59:03 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../tester.h"
 
-int	strlen_launcher(void)
+static bool	basic_test(void)
 {
-	t_unit_test	*testlist;
+	const char	*ans = "42Toyko";
+	char		*ft;
 
-	testlist = NULL;
-	print_title("strlen test");
-	load_test(&testlist, "Basic Test         ", &strlen_basic_test);
-	load_test(&testlist, "Null Test          ", &strlen_null_test);
-	// load_test(&testlist, "Long string Test   ", &strlen_long_string_test);
-	return(launch_tests(&testlist));
+	ft = ft_substr("Roppongi42Toyko", 8, 7);
+	if (strcmp(ft, ans) == 0)
+	{
+		free(ft);
+		return (true);
+	}
+	free(ft);
+	return (false);
+}
+
+int	substr_basic1_test(void)
+{
+	if (basic_test() == true)
+		return (0);
+	else
+		return (-1);
 }

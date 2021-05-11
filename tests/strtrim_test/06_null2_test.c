@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   00_launcher.c                                      :+:      :+:    :+:   */
+/*   06_null2_test.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/09 13:28:33 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/05/11 18:15:56 by tjinichi         ###   ########.fr       */
+/*   Created: 2021/05/11 15:43:54 by tjinichi          #+#    #+#             */
+/*   Updated: 2021/05/11 19:50:52 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../tester.h"
 
-int	strlen_launcher(void)
+static bool	null_test(void)
 {
-	t_unit_test	*testlist;
+	char		*ft;
 
-	testlist = NULL;
-	print_title("strlen test");
-	load_test(&testlist, "Basic Test         ", &strlen_basic_test);
-	load_test(&testlist, "Null Test          ", &strlen_null_test);
-	// load_test(&testlist, "Long string Test   ", &strlen_long_string_test);
-	return(launch_tests(&testlist));
+	ft = ft_strtrim("abc", NULL);
+	if (ft == NULL)
+		return (true);
+	return (false);
+}
+
+int	strtrim_null2_test(void)
+{
+	if (null_test() == true)
+		return (0);
+	else
+		return (-1);
 }

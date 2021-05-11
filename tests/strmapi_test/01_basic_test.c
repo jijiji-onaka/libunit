@@ -1,44 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   03_long_string_test.c                              :+:      :+:    :+:   */
+/*   01_basic_test.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/09 14:59:12 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/05/11 16:39:20 by tjinichi         ###   ########.fr       */
+/*   Created: 2021/05/09 14:51:56 by tjinichi          #+#    #+#             */
+/*   Updated: 2021/05/11 18:26:58 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../tester.h"
 
-static bool	long_string_test(void)
+static char	tolower_tmp(unsigned int n, char c)
 {
-	char	*str;
-	int		i;
+	if (c >= 'A' && c <= 'Z')
+		c = c + ('a' - 'A');
+	return (c);
+}
 
-	str = malloc((size_t)INT_MAX + 1);
-	if (str == NULL)
-		exit(1);
-	i = -1;
-	while (++i < INT_MAX)
-		str[i] = '7';
-	str[i] = '\0';
-	if (ft_strlen(str) == strlen(str))
+static bool	basic_test(void)
+{
+	const char	*ans = "42tokyo";
+	char		*src;
+	char		*res;
+
+	src = "42TOKYO";
+	res = ft_strmapi(src, tolower_tmp);
+	if (strcmp(ans, res) == 0)
 	{
-		free(str);
+		free(res);
 		return (true);
 	}
 	else
 	{
-		free(str);
+		free(res);
 		return (false);
 	}
 }
 
-int	strlen_long_string_test(void)
+int	strmapi_basic_test(void)
 {
-	if (long_string_test())
+	if (basic_test() == true)
 		return (0);
 	else
 		return (-1);

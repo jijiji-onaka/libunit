@@ -1,25 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   00_launcher.c                                      :+:      :+:    :+:   */
+/*   05_null_test.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/09 13:28:33 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/05/11 18:15:56 by tjinichi         ###   ########.fr       */
+/*   Created: 2021/05/11 15:43:54 by tjinichi          #+#    #+#             */
+/*   Updated: 2021/05/11 19:29:35 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../tester.h"
 
-int	strlen_launcher(void)
+static bool	basic_test(void)
 {
-	t_unit_test	*testlist;
+	const char	*small = "z";
+	char		*ft;
+	char		*libc;
 
-	testlist = NULL;
-	print_title("strlen test");
-	load_test(&testlist, "Basic Test         ", &strlen_basic_test);
-	load_test(&testlist, "Null Test          ", &strlen_null_test);
-	// load_test(&testlist, "Long string Test   ", &strlen_long_string_test);
-	return(launch_tests(&testlist));
+	ft = ft_strnstr(NULL, small, 0);
+	libc = strnstr(NULL, small, 0);
+	if (ft == libc)
+		return (true);
+	return (false);
+}
+
+int	strnstr_null_test(void)
+{
+	if (basic_test() == true)
+		return (0);
+	else
+		return (-1);
 }

@@ -1,44 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   03_long_string_test.c                              :+:      :+:    :+:   */
+/*   02_basic2_test.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/09 14:59:12 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/05/11 16:39:20 by tjinichi         ###   ########.fr       */
+/*   Created: 2021/05/11 15:43:54 by tjinichi          #+#    #+#             */
+/*   Updated: 2021/05/11 20:01:32 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../tester.h"
 
-static bool	long_string_test(void)
+static bool	basic_test(void)
 {
-	char	*str;
-	int		i;
+	const char	*ans = "42Toyko";
+	char		*ft1;
+	char		*ft2;
+	char		*ft3;
 
-	str = malloc((size_t)INT_MAX + 1);
-	if (str == NULL)
-		exit(1);
-	i = -1;
-	while (++i < INT_MAX)
-		str[i] = '7';
-	str[i] = '\0';
-	if (ft_strlen(str) == strlen(str))
+	ft1 = ft_substr("Roppongi42Toyko", 8, -1);
+	ft2 = ft_substr("Roppongi42Toyko", 8, -1);
+	ft3 = ft_substr("Roppongi42Toyko", 8, -1);
+	free(ft2);
+	free(ft3);
+	if (strcmp(ft1, ans) == 0)
 	{
-		free(str);
+		free(ft1);
 		return (true);
 	}
-	else
-	{
-		free(str);
-		return (false);
-	}
+	free(ft1);
+	return (false);
 }
 
-int	strlen_long_string_test(void)
+int	substr_basic2_test(void)
 {
-	if (long_string_test())
+	if (basic_test() == true)
 		return (0);
 	else
 		return (-1);

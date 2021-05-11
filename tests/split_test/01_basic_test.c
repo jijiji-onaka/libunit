@@ -1,44 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   03_long_string_test.c                              :+:      :+:    :+:   */
+/*   01_basic_test.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/09 14:59:12 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/05/11 16:39:20 by tjinichi         ###   ########.fr       */
+/*   Created: 2021/05/11 15:43:54 by tjinichi          #+#    #+#             */
+/*   Updated: 2021/05/11 16:28:36 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../tester.h"
 
-static bool	long_string_test(void)
+static bool	basic_test()
 {
-	char	*str;
-	int		i;
+	char		**split;
+	const char	*ans[] = {"Welcome", "to", "42Tokyo", NULL};
+	int			i;
+	bool		res;
 
-	str = malloc((size_t)INT_MAX + 1);
-	if (str == NULL)
-		exit(1);
-	i = -1;
-	while (++i < INT_MAX)
-		str[i] = '7';
-	str[i] = '\0';
-	if (ft_strlen(str) == strlen(str))
+	split = ft_split("-Welcome-to-42Tokyo-", '-');
+	i = 0;
+	while (split[i] && ans[i])
 	{
-		free(str);
-		return (true);
+		if (strcmp(split[i], ans[i]) != 0)
+			return (false);
+		free(split[i]);
+		i++;
 	}
+	if (split[i] == NULL && ans[i] == NULL)
+		res = true;
 	else
-	{
-		free(str);
-		return (false);
-	}
+		res = false;
+	free(split);
+	return (res);
 }
 
-int	strlen_long_string_test(void)
+int	split_basic_test(void)
 {
-	if (long_string_test())
+	if (basic_test() == true)
 		return (0);
 	else
 		return (-1);

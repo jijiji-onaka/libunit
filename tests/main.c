@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmatsuka < rmatsuka@student.42tokyo.jp>    +#+  +:+       +#+        */
+/*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 12:09:45 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/05/11 08:25:05 by rmatsuka         ###   ########.fr       */
+/*   Updated: 2021/05/11 20:16:25 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,6 @@ int	main(void)
 	test_ret = 0;
 	test_ret += signal_launcher();
 	puts("");
-	test_ret += strlen_launcher();
-	puts("");
 	test_ret += atoi_launcher();
 	puts("");
 	test_ret += bzero_launcher();
@@ -74,6 +72,36 @@ int	main(void)
 	test_ret += memmove_launcher();
 	puts("");
 	test_ret += memset_launcher();
+	puts("");
+	test_ret += split_launcher();
+	puts("");
+	test_ret += strchr_launcher();
+	puts("");
+	test_ret += strdup_launcher();
+	puts("");
+	test_ret += strjoin_launcher();
+	puts("");
+	test_ret += strlcat_launcher();
+	puts("");
+	test_ret += strlcpy_launcher();
+	puts("");
+	test_ret += strlen_launcher();
+	puts("");
+	test_ret += strmapi_launcher();
+	puts("");
+	test_ret += strncmp_launcher();
+	puts("");
+	test_ret += strnstr_launcher();
+	puts("");
+	test_ret += strrchr_launcher();
+	puts("");
+	test_ret += strtrim_launcher();
+	puts("");
+	test_ret += substr_launcher();
+	puts("");
+	test_ret += tolower_launcher();
+	puts("");
+	test_ret += toupper_launcher();
 	puts("");
 
 

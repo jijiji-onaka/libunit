@@ -5,21 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/09 13:28:33 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/05/11 18:15:56 by tjinichi         ###   ########.fr       */
+/*   Created: 2021/05/11 15:40:11 by tjinichi          #+#    #+#             */
+/*   Updated: 2021/05/11 19:35:21 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../tester.h"
 
-int	strlen_launcher(void)
+int	strrchr_launcher(void)
 {
 	t_unit_test	*testlist;
 
 	testlist = NULL;
-	print_title("strlen test");
-	load_test(&testlist, "Basic Test         ", &strlen_basic_test);
-	load_test(&testlist, "Null Test          ", &strlen_null_test);
-	// load_test(&testlist, "Long string Test   ", &strlen_long_string_test);
+	print_title("strrchr test");
+	load_test(&testlist, "Basic Test          ", &strrchr_basic_test);
+	load_test(&testlist, "Empty1 Test         ", &strrchr_empty1_test);
+	load_test(&testlist, "Empty2 Test         ", &strrchr_empty2_test);
+	load_test(&testlist, "Empty3 Test         ", &strrchr_empty3_test);
+	load_test(&testlist, "Match head Test     ", &strrchr_match_head_test);
+	load_test(&testlist, "Match tail Test     ", &strrchr_match_tail_test);
 	return(launch_tests(&testlist));
 }

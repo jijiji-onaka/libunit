@@ -4,6 +4,7 @@
 # include <unistd.h>
 # include <limits.h>
 # include <signal.h>
+# include <ctype.h>
 
 // void f()
 // {
@@ -52,9 +53,33 @@ void	exit_fatal(int line, char *file)
 	write(STDERR_FILENO, "\n", 1);
 }
 
+// #include <stdio.h>
+// #define DEF "100"
+// int main(){
+// printf("#defineで定義された定数は" DEF "です");
+// }
+
 int main()
 {
-	exit_fatal(__LINE__, __FILE__);
+	const char	*big = "Foo Bar Baz";
+	const char	*small = "Bar";
+	char		*ft;
+	char		*libc;
+
+	// ft = ft_strnstr(big, small, 6);
+	libc = strnstr(big, small, 7);
+	char s[100] = "aaaa";
+	printf("[%c]\n", tolower(0));
+	printf("[%c]\n", tolower(-1));
+	printf("1%s\n", strnstr(NULL, s, 0));
+	printf("2%s\n", strnstr(NULL, NULL, 0));
+	printf("%s\n", strnstr(NULL, NULL, 0));
+	printf("%d\n", strnstr(s, NULL, 0));
+	printf("%d\n", strnstr(s, NULL, 0));
+	// printf("%d\n", strncmp(NULL, s, 1));
+	// printf("%d\n", strlcat(NULL, s, 0));
+	// printf("%zu\n", strlcat(NULL, NULL, 0));
+	// exit_fatal(__LINE__, __FILE__);
 	// char *a = NULL;
 	// *a = 1;
 	// signal(SIGSEGV, f);

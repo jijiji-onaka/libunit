@@ -6,20 +6,24 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 13:28:33 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/05/11 18:15:56 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/05/11 17:19:53 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../tester.h"
 
-int	strlen_launcher(void)
+int	strlcpy_launcher(void)
 {
 	t_unit_test	*testlist;
 
 	testlist = NULL;
-	print_title("strlen test");
-	load_test(&testlist, "Basic Test         ", &strlen_basic_test);
-	load_test(&testlist, "Null Test          ", &strlen_null_test);
-	// load_test(&testlist, "Long string Test   ", &strlen_long_string_test);
+	print_title("strlcpy test");
+	load_test(&testlist, "Basic1 Test         ", &strlcpy_basic1_test);
+	load_test(&testlist, "Basic2 Test         ", &strlcpy_basic2_test);
+	load_test(&testlist, "Basic3 Test         ", &strlcpy_basic3_test);
+	load_test(&testlist, "Basic4 Test         ", &strlcpy_basic4_test);
+	load_test(&testlist, "Basic5 Test         ", &strlcpy_basic5_test);
+	load_test(&testlist, "Null1 Test          ", &strlcpy_null1_test);
+	load_test(&testlist, "Null2 Test          ", &strlcpy_null2_test);
 	return(launch_tests(&testlist));
 }

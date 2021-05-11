@@ -158,6 +158,135 @@ int	    memset_basic2_test(void);
 int     memset_basic3_test(void);
 int	    memset_null_test(void);
 /*
+** SPLIT TEST
+*/
+int		split_launcher(void);
+int		split_basic_test(void);
+int		split_empty1_test(void);
+int		split_empty2_test(void);
+int		split_empty3_test(void);
+int		split_same_str_test(void);
+int		split_null_test(void);
+/*
+** STRCHR TEST
+*/
+int		strchr_launcher(void);
+int		strchr_basic_test(void);
+int		strchr_empty1_test(void);
+int		strchr_empty2_test(void);
+int		strchr_empty3_test(void);
+int		strchr_match_head_test(void);
+int		strchr_match_tail_test(void);
+/*
+** STRDUP TEST
+*/
+int		strdup_launcher(void);
+int		strdup_basic_test(void);
+int		strdup_empty_test(void);
+int		strdup_long_str_test(void);
+/*
+** STRJOIN TEST
+*/
+int		strjoin_launcher(void);
+int		strjoin_basic_test(void);
+int		strjoin_empty1_test(void);
+int		strjoin_empty2_test(void);
+int		strjoin_empty3_test(void);
+int		strjoin_null1_test(void);
+int		strjoin_null2_test(void);
+int		strjoin_null3_test(void);
+/*
+** STRLCAT TEST
+*/
+int		strlcat_launcher(void);
+int		strlcat_basic1_test(void);
+int		strlcat_basic2_test(void);
+int		strlcat_basic3_test(void);
+int		strlcat_basic4_test(void);
+int		strlcat_basic5_test(void);
+int		strlcat_null1_test(void);
+int		strlcat_null2_test(void);
+/*
+** STRLCPY TEST
+*/
+int		strlcpy_launcher(void);
+int		strlcpy_basic1_test(void);
+int		strlcpy_basic2_test(void);
+int		strlcpy_basic3_test(void);
+int		strlcpy_basic4_test(void);
+int		strlcpy_basic5_test(void);
+int		strlcpy_null1_test(void);
+int		strlcpy_null2_test(void);
+/*
+** STRMAPI TEST
+*/
+int		strmapi_launcher(void);
+int		strmapi_basic_test(void);
+int		strmapi_null1_test(void);
+int		strmapi_null2_test(void);
+int		strmapi_null3_test(void);
+/*
+** STRNCMP TEST
+*/
+int		strncmp_launcher(void);
+int		strncmp_basic1_test(void);
+int		strncmp_basic2_test(void);
+int		strncmp_basic3_test(void);
+int		strncmp_basic4_test(void);
+int		strncmp_basic5_test(void);
+int		strncmp_null1_test(void);
+int		strncmp_null2_test(void);
+int		strncmp_null3_test(void);
+/*
+** STRNSTR TEST
+*/
+int		strnstr_launcher(void);
+int		strnstr_basic1_test(void);
+int		strnstr_basic2_test(void);
+int		strnstr_basic3_test(void);
+int		strnstr_basic4_test(void);
+int		strnstr_null_test(void);
+/*
+** STRRCHR TEST
+*/
+int		strrchr_launcher(void);
+int		strrchr_basic_test(void);
+int		strrchr_empty1_test(void);
+int		strrchr_empty2_test(void);
+int		strrchr_empty3_test(void);
+int		strrchr_match_head_test(void);
+int		strrchr_match_tail_test(void);
+/*
+** STRTRIM TEST
+*/
+int		strtrim_launcher(void);
+int		strtrim_basic1_test(void);
+int		strtrim_basic2_test(void);
+int		strtrim_basic3_test(void);
+int		strtrim_same_test(void);
+int		strtrim_null1_test(void);
+int		strtrim_null2_test(void);
+int		strtrim_null3_test(void);
+/*
+** SUBSTR TEST
+*/
+int		substr_launcher(void);
+int		substr_basic1_test(void);
+int		substr_basic2_test(void);
+int		substr_basic3_test(void);
+int		substr_null_test(void);
+/*
+** TOLOWER TEST
+*/
+int		tolower_launcher(void);
+int		tolower_all_test(void);
+/*
+** TOUPPER TEST
+*/
+int		toupper_launcher(void);
+int		toupper_all_test(void);
+
+/*
 **
 */
 # define OK true

@@ -6,20 +6,21 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 13:28:33 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/05/11 18:15:56 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/05/11 18:31:40 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../tester.h"
 
-int	strlen_launcher(void)
+int	strmapi_launcher(void)
 {
 	t_unit_test	*testlist;
 
 	testlist = NULL;
-	print_title("strlen test");
-	load_test(&testlist, "Basic Test         ", &strlen_basic_test);
-	load_test(&testlist, "Null Test          ", &strlen_null_test);
-	// load_test(&testlist, "Long string Test   ", &strlen_long_string_test);
+	print_title("strmapi test");
+	load_test(&testlist, "Basic Test          ", &strmapi_basic_test);
+	load_test(&testlist, "Null1 Test          ", &strmapi_null1_test);
+	load_test(&testlist, "Null2 Test          ", &strmapi_null2_test);
+	load_test(&testlist, "Null3 Test          ", &strmapi_null3_test);
 	return(launch_tests(&testlist));
 }
