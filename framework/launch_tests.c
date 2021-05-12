@@ -6,7 +6,7 @@
 /*   By: rmatsuka <rmatsuka@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 11:35:59 by rmatsuka          #+#    #+#             */
-/*   Updated: 2021/05/12 08:26:57 by rmatsuka         ###   ########.fr       */
+/*   Updated: 2021/05/12 10:07:34 by rmatsuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,20 +23,19 @@ static int	check_status(int status)
 		}
 		else if (WEXITSTATUS(status) == 255)
 			ft_put_s("\033[31m[KO]\033[0m\n", STDOUT_FILENO);
-
 	}
-	else if (WIFSIGNALED(status))
+	if (WIFSIGNALED(status))
 	{
-		if (WTERMSIG(status) == SIGSEGV)
-			ft_put_s("\033[31m[SEGV]\033[0m\n", STDERR_FILENO);
-		else if (WTERMSIG(status) == SIGBUS)
-			ft_put_s("\033[31m[BUS]\033[0m\n", STDERR_FILENO);
-		else if (WTERMSIG(status) == SIGALRM)
-			ft_put_s("\033[31m[TIME]\033[0m\n", STDERR_FILENO);
-		else if (WTERMSIG(status) == SIGABRT)
-			ft_put_s("\033[31m[SIGA]\033[0m\n", STDERR_FILENO);
+		if (status == SIGSEGV)
+			ft_put_s("\033[31m[SEGV]\033[0m\n", STDOUT_FILENO);
+		else if (status == SIGBUS)
+			ft_put_s("\033[31m[BUS]\033[0m\n", STDOUT_FILENO);
+		else if (status == SIGALRM)
+			ft_put_s("\033[31m[TIME]\033[0m\n", STDOUT_FILENO);
+		else if (status == SIGABRT)
+			ft_put_s("\033[31m[SIGA]\033[0m\n", STDOUT_FILENO);
 		else
-			ft_put_s("\033[31m[CRASH]\033[0m\n", STDERR_FILENO);
+			ft_put_s("\033[31m[CRASH]\033[0m\n", STDOUT_FILENO);
 	}
 	return (0);
 }
@@ -51,11 +50,25 @@ static int	run_test(int (*f)(void))
 		exit_fatal(__LINE__, __FILE__);
 	else if (pid == 0)
 	{
+	//if (BONUS) ??
 		alarm(2);
 		exit(f());
 	}
 	wait(&status);
 	return (check_status(status));
+}
+
+static int	put_result(int success_cnt, int tests_cnt)
+{
+	printf("\033[36m%d/%d tests passed\033[49m", success_cnt, tests_cnt);
+	if (tests_cnt == success_cnt)
+	{
+		printf("  \x1b[32mOK\x1b[39m\n");
+		return (1);
+	}
+	else
+		printf("  \033[31mKO\033[39m\n");
+	return (0);
 }
 
 int	launch_tests(t_unit_test **list)
@@ -80,13 +93,5 @@ int	launch_tests(t_unit_test **list)
 		testlist = testlist->next;
 	}
 	testlist_clear(list);
-	printf("\033[36m%d/%d tests passed\033[49m", success_cnt, tests_cnt);
-	if (tests_cnt == success_cnt)
-	{
-		printf("  \x1b[32mOK\x1b[39m\n");
-		return (1);
-	}
-	else
-		printf("  \033[31mKO\033[39m\n");
-	return (0);
+	return (put_result(success_cnt, tests_cnt));
 }
