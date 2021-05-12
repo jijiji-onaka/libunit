@@ -6,7 +6,7 @@
 /*   By: rmatsuka <rmatsuka@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 11:35:59 by rmatsuka          #+#    #+#             */
-/*   Updated: 2021/05/12 10:07:34 by rmatsuka         ###   ########.fr       */
+/*   Updated: 2021/05/12 14:22:55 by rmatsuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,12 @@ static int	check_status(int status)
 		else if (status == SIGALRM)
 			ft_put_s("\033[31m[TIME]\033[0m\n", STDOUT_FILENO);
 		else if (status == SIGABRT)
-			ft_put_s("\033[31m[SIGA]\033[0m\n", STDOUT_FILENO);
+			ft_put_s("\033[31m[ABRT]\033[0m\n", STDOUT_FILENO);
+		else if (status == SIGFPE)
+			ft_put_s("\033[31m[FPE]\033[0m\n", STDOUT_FILENO);
 		else
 			ft_put_s("\033[31m[CRASH]\033[0m\n", STDOUT_FILENO);
+
 	}
 	return (0);
 }

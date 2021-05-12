@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   07_crash_test.c                                    :+:      :+:    :+:   */
+/*   07_fpe_test.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmatsuka <rmatsuka@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "./../tester.h"
 
-static bool	do_crash()
+static bool	do_fpe()
 {
 	int	i;
 
@@ -24,9 +24,9 @@ static bool	do_crash()
 
 }
 
-int	signal_crash_test(void)
+int	signal_fpe_test(void)
 {
-	if (do_crash())
+	if (do_fpe())
 		return (0);
 	else
 		return (-1);
