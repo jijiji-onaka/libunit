@@ -6,7 +6,7 @@
 /*   By: rmatsuka <rmatsuka@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 16:36:33 by rmatsuka          #+#    #+#             */
-/*   Updated: 2021/05/11 13:34:34 by rmatsuka         ###   ########.fr       */
+/*   Updated: 2021/05/12 15:33:33 by rmatsuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,6 @@
 # include <unistd.h>
 # include <stdio.h>
 # include "../libft/libft.h"
-# define COLOR "\x1b[47m"
-# define RESET "\x1b[49m"
-# define OKC "\x1b[32m"
-# define KOC "\x1b[30m"
 
 typedef struct s_unit_list
 {

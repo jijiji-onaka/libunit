@@ -6,7 +6,7 @@
 /*   By: rmatsuka <rmatsuka@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 13:28:33 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/05/12 14:25:17 by rmatsuka         ###   ########.fr       */
+/*   Updated: 2021/05/12 15:32:54 by rmatsuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ int	signal_launcher(void)
 	load_test(&testlist, "Time Test   ", &signal_time_error_test);
 	load_test(&testlist, "Abort Test  ", &signal_sigabrt_test);
 	load_test(&testlist, "Fpe Test    ", &signal_fpe_test);
+	load_test(&testlist, "Crash Test  ", &signal_crash_test);
 	return(launch_tests(&testlist));
 }
