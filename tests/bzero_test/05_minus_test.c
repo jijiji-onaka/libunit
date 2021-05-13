@@ -6,7 +6,7 @@
 /*   By: rmatsuka <rmatsuka@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 08:32:29 by rmatsuka          #+#    #+#             */
-/*   Updated: 2021/05/10 08:38:10 by rmatsuka         ###   ########.fr       */
+/*   Updated: 2021/05/13 22:00:51 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ int	bzero_minus_test(void)
 	memset(s2, 'a', SIZE);
 
 	ft_bzero(s1, -1);
-	bzero(s2, -1);
 
 	if (!memcmp(s1, s2, SIZE))
 		return (0);

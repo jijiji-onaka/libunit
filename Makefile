@@ -6,7 +6,7 @@
 #    By: rmatsuka <rmatsuka@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/09 14:16:52 by tjinichi          #+#    #+#              #
-#    Updated: 2021/05/13 08:54:42 by rmatsuka         ###   ########.fr        #
+#    Updated: 2021/05/13 21:58:41 by tjinichi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ TEST = libunit_test
 
 CC = gcc -g # -fsanitize=address
 
-CFLAGS = # -Wall -Werror -Wextra -g -fsanitize=address
+CFLAGS =  -Wall -Werror -Wextra# -g -fsanitize=address
 
 TEST_SRCS =	tests/main.c \
 		tests/signal_test/00_launcher.c \

@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 14:51:56 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/05/11 18:26:58 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/05/13 22:02:28 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 static char	tolower_tmp(unsigned int n, char c)
 {
+	(void)n;
 	if (c >= 'A' && c <= 'Z')
 		c = c + ('a' - 'A');
 	return (c);

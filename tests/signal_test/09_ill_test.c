@@ -6,7 +6,7 @@
 /*   By: rmatsuka <rmatsuka@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/13 08:39:38 by rmatsuka          #+#    #+#             */
-/*   Updated: 2021/05/13 08:49:11 by rmatsuka         ###   ########.fr       */
+/*   Updated: 2021/05/13 22:00:03 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static bool	do_ill()
 {
 	raise(1);
-
+	return (true);
 }
 
 int	signal_ill_test(void)

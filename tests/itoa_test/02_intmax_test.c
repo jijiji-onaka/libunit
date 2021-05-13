@@ -6,7 +6,7 @@
 /*   By: rmatsuka <rmatsuka@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 19:42:14 by rmatsuka          #+#    #+#             */
-/*   Updated: 2021/05/10 20:44:34 by rmatsuka         ###   ########.fr       */
+/*   Updated: 2021/05/13 22:01:07 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 int	itoa_intmax_test(void)
 {
 	char	*s = ft_itoa(2147483647);
-	int		ans;
 
 	if (!strcmp(s, "2147483647"))
 		return (0);

@@ -6,18 +6,11 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 14:51:56 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/05/11 18:30:17 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/05/13 22:03:36 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../tester.h"
-
-static char	tolower_tmp(unsigned int n, char c)
-{
-	if (c >= 'A' && c <= 'Z')
-		c = c + ('a' - 'A');
-	return (c);
-}
 
 static bool	null_test(void)
 {
