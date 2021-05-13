@@ -36,6 +36,7 @@ int		signal_time_error_test(void);
 int		signal_sigabrt_test(void);
 int		signal_fpe_test(void);
 int		signal_crash_test(void);
+int		signal_ill_test(void);
 /*
 ** STRLEN TEST
 */

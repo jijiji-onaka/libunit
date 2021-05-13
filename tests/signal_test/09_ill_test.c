@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   05_time_error_test.c                               :+:      :+:    :+:   */
+/*   09_ill_test.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmatsuka <rmatsuka@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/12 08:02:43 by rmatsuka          #+#    #+#             */
-/*   Updated: 2021/05/13 08:41:40 by rmatsuka         ###   ########.fr       */
+/*   Created: 2021/05/13 08:39:38 by rmatsuka          #+#    #+#             */
+/*   Updated: 2021/05/13 08:49:11 by rmatsuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../tester.h"
 
-static bool	do_time_error()
+static bool	do_ill()
 {
-	while (1)
-		;
-	return (true);
+	raise(1);
+
 }
 
-int	signal_time_error_test(void)
+int	signal_ill_test(void)
 {
-	if (do_time_error())
+	if (do_ill())
 		return (0);
 	else
 		return (-1);

@@ -6,7 +6,7 @@
 /*   By: rmatsuka <rmatsuka@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/12 15:31:50 by rmatsuka          #+#    #+#             */
-/*   Updated: 2021/05/12 15:34:59 by rmatsuka         ###   ########.fr       */
+/*   Updated: 2021/05/13 08:42:15 by rmatsuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 static bool	do_crash()
 {
 	asm("int3");
+	return (true);
 }
 
 int	signal_crash_test(void)

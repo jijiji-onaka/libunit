@@ -6,7 +6,7 @@
 /*   By: rmatsuka <rmatsuka@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 16:36:33 by rmatsuka          #+#    #+#             */
-/*   Updated: 2021/05/12 15:33:33 by rmatsuka         ###   ########.fr       */
+/*   Updated: 2021/05/13 10:23:29 by rmatsuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,16 @@
 # include <unistd.h>
 # include <stdio.h>
 # include "../libft/libft.h"
+
+# define MSG_OK			"\033[38;5;2m[OK]\033[0m\n"
+# define MSG_KO 		"\033[38;5;9m[KO]\033[0m\n"
+# define MSG_SEGV 		"\033[38;5;153m[SEGV]\033[0m\n"
+# define MSG_BUS		"\033[38;5;80m[BUS]\033[0m\n"
+# define MSG_TIMEOUT 	"\033[38;5;75m[TIMEOUT]\033[0m\n"
+# define MSG_ABRT 		"\033[38;5;13m[ABRT]\033[0m\n"
+# define MSG_FPE 		"\033[38;5;112m[FPE]\033[0m\n"
+# define MSG_ILL 		"\033[38;5;214m[ILL]\033[0m\e[24m\n"
+# define MSG_CRASH 		"\033[38;5;220m[CRASH]\033[0m\n"
 
 typedef struct s_unit_list
 {

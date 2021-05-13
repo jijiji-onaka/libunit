@@ -6,7 +6,7 @@
 #    By: rmatsuka <rmatsuka@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/09 14:16:52 by tjinichi          #+#    #+#              #
-#    Updated: 2021/05/12 15:34:18 by rmatsuka         ###   ########.fr        #
+#    Updated: 2021/05/13 08:54:42 by rmatsuka         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,7 @@ TEST_SRCS =	tests/main.c \
 		tests/signal_test/06_sigabrt_test.c \
 		tests/signal_test/07_fpe_test.c \
 		tests/signal_test/08_crash_test.c \
+		tests/signal_test/09_ill_test.c \
 		tests/strlen_test/00_launcher.c \
 		tests/strlen_test/01_basic_test.c \
 		tests/strlen_test/02_null_test.c \
