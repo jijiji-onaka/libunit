@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 19:52:34 by rmatsuka          #+#    #+#             */
-/*   Updated: 2021/05/15 03:56:57 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/05/15 04:17:59 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	memcpy_basic3_test(void)
 	memset(s2, '1', SIZE);
 	ft_memcpy(s1, "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", 20);
 	memcpy(s2, "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", 20);
-	if (strcmp(s1, s2))
+	if (strcmp(s1, s2) == 0)
 		ans = 0;
 	else
 		ans = -1;

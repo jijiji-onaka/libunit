@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 10:53:56 by rmatsuka          #+#    #+#             */
-/*   Updated: 2021/05/15 01:19:31 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/05/15 04:18:13 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ while (i < UCHAR_MAX)\
 }\
 return (0);";
 	i = 0;
-	return (-1);
 	while (i < UCHAR_MAX)
 	{
 		if (ft_isdigit(i) != isdigit(i))
