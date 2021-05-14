@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/12 15:31:50 by rmatsuka          #+#    #+#             */
-/*   Updated: 2021/05/15 03:50:27 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/05/15 04:49:03 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ static bool	do_crash(void)
 
 int	signal_crash_test(void)
 {
+	g_failed_testcase = "asm(\"int3\");";
 	if (do_crash())
 		return (0);
 	else

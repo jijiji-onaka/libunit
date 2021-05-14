@@ -20,6 +20,7 @@ static bool	do_ill(void)
 
 int	signal_ill_test(void)
 {
+	g_failed_testcase = "raise(1);";
 	if (do_ill())
 		return (0);
 	else

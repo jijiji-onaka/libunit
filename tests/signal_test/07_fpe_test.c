@@ -25,6 +25,13 @@ static bool	do_fpe(void)
 
 int	signal_fpe_test(void)
 {
+	g_failed_testcase = "int	i;\
+\n\
+i = 0;\
+if (1 / i)\
+	return (true);\
+else\
+	return (false);";
 	if (do_fpe())
 		return (0);
 	else

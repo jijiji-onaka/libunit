@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 13:52:23 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/05/15 03:50:14 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/05/15 04:47:29 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,10 @@ static bool	do_segfault(void)
 
 int	signal_segfault_test(void)
 {
+	g_failed_testcase = "char	*ptr;\
+\n\
+ptr = NULL;\
+*ptr = '7';";
 	if (do_segfault())
 		return (0);
 	else

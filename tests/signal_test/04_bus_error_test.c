@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 13:52:23 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/05/15 03:57:50 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/05/15 04:47:56 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,10 @@ static bool	do_bus_error(void)
 
 int	signal_bus_error_test(void)
 {
+	g_failed_testcase = "char	*str;\
+\n\
+str = \"32Tokyo\";\
+str[0] = '4';"\
 	if (do_bus_error())
 		return (0);
 	else
