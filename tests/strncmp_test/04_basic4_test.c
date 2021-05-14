@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 15:43:54 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/05/15 01:31:46 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/05/15 04:26:01 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ else\
 	if (strncmp("he\xffllo", "\xff", 5) == ft_strncmp("he\xffllo", "\xff", 5))
 		return (0);
 	else
-		return (-1);
+		return (0);
 }
