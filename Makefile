@@ -6,22 +6,15 @@
 #    By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/09 14:16:52 by tjinichi          #+#    #+#              #
-<<<<<<< HEAD
-#    Updated: 2021/05/15 05:41:30 by tjinichi         ###   ########.fr        #
-=======
-#    Updated: 2021/05/15 04:49:56 by tjinichi         ###   ########.fr        #
->>>>>>> github/main
+#    Updated: 2021/05/15 05:49:59 by tjinichi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
 
 TEST = libunit_test
 
 CC = gcc
-<<<<<<< HEAD
-CFLAGS = -Wall -Werror -Wextra    # -g -fsanitize=address
-=======
 CFLAGS = -Wall -Werror -Wextra  # -g -fsanitize=address
->>>>>>> github/main
 
 LIBDIR = 	./libft
 LIBS = 	$(LIBDIR)/libft.a
