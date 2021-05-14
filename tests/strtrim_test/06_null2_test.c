@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 15:43:54 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/05/11 19:50:52 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/05/15 01:34:28 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@ static bool	null_test(void)
 {
 	char		*ft;
 
+	g_failed_testcase = "char		*ft;\
+\n\
+ft = ft_strtrim(\"abc\", NULL);\
+if (ft == NULL)\
+	return (true);\
+return (false);";
 	ft = ft_strtrim("abc", NULL);
 	if (ft == NULL)
 		return (true);

@@ -6,18 +6,41 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 15:43:54 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/05/11 16:38:41 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/05/15 03:38:18 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../tester.h"
 
-static bool	empty_test()
+static void	set_testcase(void)
+{
+	g_failed_testcase = "const char	*str = \"\";\
+char	*ft;\
+char	*libc;\
+\n\
+ft = ft_strdup(str);\
+libc = strdup(str);\
+if (strcmp(ft, libc) == 0 && ft != libc)\
+{\
+	free(ft);\
+	free(libc);\
+	return (true);\
+}\
+else\
+{\
+	free(ft);\
+	free(libc);\
+	return (false);\
+}";
+}
+
+static bool	empty_test(void)
 {
 	const char	*str = "";
-	char	*ft;
-	char	*libc;
+	char		*ft;
+	char		*libc;
 
+	set_testcase();
 	ft = ft_strdup(str);
 	libc = strdup(str);
 	if (strcmp(ft, libc) == 0 && ft != libc)

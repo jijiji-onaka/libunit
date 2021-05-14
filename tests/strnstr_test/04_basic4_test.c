@@ -6,11 +6,25 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 15:43:54 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/05/11 19:21:05 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/05/15 01:32:43 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../tester.h"
+
+static void	set_testcase(void)
+{
+	g_failed_testcase = "const char	*big = \"Foo Bar Baz\";\
+const char	*small = \"z\";\
+char		*ft;\
+char		*libc;\
+\n\
+ft = ft_strnstr(big, small, -1);\
+libc = strnstr(big, small, -1);\
+if (ft == libc)\
+	return (true);\
+return (false);";
+}
 
 static bool	basic_test(void)
 {
@@ -19,6 +33,7 @@ static bool	basic_test(void)
 	char		*ft;
 	char		*libc;
 
+	set_testcase();
 	ft = ft_strnstr(big, small, -1);
 	libc = strnstr(big, small, -1);
 	if (ft == libc)

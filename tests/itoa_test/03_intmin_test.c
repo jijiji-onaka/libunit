@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   03_intmin_test.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmatsuka <rmatsuka@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 19:52:34 by rmatsuka          #+#    #+#             */
-/*   Updated: 2021/05/10 20:44:56 by rmatsuka         ###   ########.fr       */
+/*   Updated: 2021/05/15 01:20:23 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,23 @@
 
 int	itoa_intmin_test(void)
 {
-	char	*s = ft_itoa(-2147483648);
+	char	*str;
+	bool	ret;
 
-	if (!strcmp(s, "-2147483648"))
+	g_failed_testcase = "char	*str;\
+bool	ret;\
+\n\
+str = ft_itoa(-2147483648);\
+ret = strcmp(str, \"-2147483648\");\
+free(str);\
+if (ret == 0)\
+	return (0);\
+else\
+	return (-1);";
+	str = ft_itoa(-2147483648);
+	ret = strcmp(str, "-2147483648");
+	free(str);
+	if (ret == 0)
 		return (0);
 	else
 		return (-1);

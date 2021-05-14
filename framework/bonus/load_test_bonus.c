@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   load_test.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmatsuka <rmatsuka@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 11:24:34 by rmatsuka          #+#    #+#             */
-/*   Updated: 2021/05/12 10:01:07 by rmatsuka         ###   ########.fr       */
+/*   Updated: 2021/05/13 22:08:59 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libunit.h"
+#include "../includes/libunit.h"
 
 static int	check_list(t_unit_test **list, char *test_name, int (*f)(void))
 {

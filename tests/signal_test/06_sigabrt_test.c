@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   06_sigabrt_test.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmatsuka <rmatsuka@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/12 08:30:18 by rmatsuka          #+#    #+#             */
-/*   Updated: 2021/05/13 08:42:06 by rmatsuka         ###   ########.fr       */
+/*   Updated: 2021/05/15 03:50:18 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../tester.h"
 
-static bool	do_sigabrt()
+static bool	do_sigabrt(void)
 {
 	abort();
 	return (true);

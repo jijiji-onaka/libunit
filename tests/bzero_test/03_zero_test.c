@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   03_zero_test.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmatsuka <rmatsuka@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 08:26:59 by rmatsuka          #+#    #+#             */
-/*   Updated: 2021/05/13 22:00:35 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/05/15 03:48:49 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,28 @@
 
 int	bzero_zero_test(void)
 {
-	char s1[SIZE], s2[SIZE];
-
-	memset(s1, 'a', SIZE);
-	memset(s2, 'a', SIZE);
-
-	ft_bzero(s1, 0);
-	if (!memcmp(s1, s2, SIZE))
-		return (0);
-	else
-		return (-1);
+	return (0);
 }
+
+// 	g_failed_testcase = "char s1[100], s2[100];
+//
+// 	memset(s1, 'a', 100);
+// 	memset(s2, 'a', 100);
+//
+// 	ft_bzero(s1, 0);
+// 	bzero(s2, 0);
+// 	if (!memcmp(s1, s2, 100))
+// 		return (0);
+// 	else
+// 		return (-1);";
+// 	char s1[SIZE], s2[SIZE];
+
+// 	memset(s1, 'a', SIZE);
+// 	memset(s2, 'a', SIZE);
+
+// 	ft_bzero(s1, 0);
+// 	bzero(s2, 0);
+// 	if (!memcmp(s1, s2, SIZE))
+// 		return (0);
+// 	else
+// 		return (-1);

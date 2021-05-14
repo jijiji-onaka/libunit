@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   00_launcher.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmatsuka <rmatsuka@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 08:59:45 by rmatsuka          #+#    #+#             */
-/*   Updated: 2021/05/12 07:34:34 by rmatsuka         ###   ########.fr       */
+/*   Updated: 2021/05/15 03:38:54 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ int	calloc_launcher(void)
 	load_test(&testlist, "Zero Test          ", &calloc_zero_test);
 	load_test(&testlist, "BigSize Test       ", &calloc_bigsize_test);
 	load_test(&testlist, "Minus Test         ", &calloc_minus_test);
-	return(launch_tests(&testlist));
+	return (launch_tests(&testlist));
 }

@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 13:28:33 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/05/11 19:34:53 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/05/15 03:38:54 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,8 @@ int	strncmp_launcher(void)
 	load_test(&testlist, "Null1 Test          ", &strncmp_null1_test);
 	load_test(&testlist, "Null2 Test          ", &strncmp_null2_test);
 	load_test(&testlist, "Null3 Test          ", &strncmp_null3_test);
-	return(launch_tests(&testlist));
+	load_test(&testlist, "Null4 Test          ", &strncmp_null4_test);
+	load_test(&testlist, "Null5 Test          ", &strncmp_null5_test);
+	load_test(&testlist, "Null6 Test          ", &strncmp_null6_test);
+	return (launch_tests(&testlist));
 }

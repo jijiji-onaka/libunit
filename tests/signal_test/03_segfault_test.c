@@ -6,13 +6,13 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 13:52:23 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/05/13 21:59:33 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/05/15 03:50:14 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../tester.h"
 
-static bool	do_segfault()
+static bool	do_segfault(void)
 {
 	char	*ptr;
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   00_launcher.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmatsuka <rmatsuka@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 13:28:33 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/05/13 08:55:03 by rmatsuka         ###   ########.fr       */
+/*   Updated: 2021/05/15 03:38:54 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ int	signal_launcher(void)
 	load_test(&testlist, "Fpe Test    ", &signal_fpe_test);
 	load_test(&testlist, "Crash Test  ", &signal_crash_test);
 	load_test(&testlist, "Ill Test    ", &signal_ill_test);
-	return(launch_tests(&testlist));
+	return (launch_tests(&testlist));
 }

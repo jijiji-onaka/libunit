@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   04_null_test.c                                     :+:      :+:    :+:   */
+/*   05_null2_test.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmatsuka < rmatsuka@student.42tokyo.jp>    +#+  +:+       +#+        */
+/*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/10 19:35:30 by rmatsuka          #+#    #+#             */
-/*   Updated: 2021/05/11 11:19:10 by rmatsuka         ###   ########.fr       */
+/*   Created: 2021/05/10 19:52:34 by rmatsuka          #+#    #+#             */
+/*   Updated: 2021/05/15 01:24:06 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../tester.h"
 
-int	memcmp_null_test(void)
+int	memcpy_null2_test(void)
 {
 	char	*s1;
-	int		ans1;
-	int		ans2;
 
 	s1 = "hello";
-	ans1 = ft_memcmp(s1, NULL, 10);
-	ans2 = memcmp(s1, NULL, 10);
-	if (ans1 == ans2)
+	g_failed_testcase = "char	*s1;\
+\n\
+s1 = \"hello\";\
+if (ft_memcpy(s, NULL, 0) == memcpy(s, NULL, 0))\
+	return (0);\
+else\
+	return (-1);";
+	if (ft_memcpy(s1, NULL, 0) == memcpy(s1, NULL, 0))
 		return (0);
 	else
 		return (-1);

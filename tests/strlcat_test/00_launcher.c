@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 13:28:33 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/05/11 17:19:26 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/05/15 03:38:54 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ int	strlcat_launcher(void)
 	load_test(&testlist, "Basic5 Test         ", &strlcat_basic5_test);
 	load_test(&testlist, "Null1 Test          ", &strlcat_null1_test);
 	load_test(&testlist, "Null2 Test          ", &strlcat_null2_test);
-	return(launch_tests(&testlist));
+	return (launch_tests(&testlist));
 }

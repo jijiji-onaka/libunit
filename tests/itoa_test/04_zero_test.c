@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   04_zero_test.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmatsuka <rmatsuka@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 19:54:42 by rmatsuka          #+#    #+#             */
-/*   Updated: 2021/05/10 20:45:17 by rmatsuka         ###   ########.fr       */
+/*   Updated: 2021/05/15 01:20:32 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,23 @@
 
 int	itoa_zero_test(void)
 {
-	char	*s = ft_itoa(0);
+	char	*str;
+	bool	ret;
 
-	if (!strcmp(s, "0"))
+	g_failed_testcase = "char	*str;\
+bool	ret;\
+\n\
+str = ft_itoa(0);\
+ret = strcmp(str, \"0\");\
+free(str);\
+if (ret == 0)\
+	return (0);\
+else\
+	return (-1);";
+	str = ft_itoa(0);
+	ret = strcmp(str, "0");
+	free(str);
+	if (ret == 0)
 		return (0);
 	else
 		return (-1);

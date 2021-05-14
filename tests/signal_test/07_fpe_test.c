@@ -12,7 +12,7 @@
 
 #include "./../tester.h"
 
-static bool	do_fpe()
+static bool	do_fpe(void)
 {
 	int	i;
 
@@ -21,7 +21,6 @@ static bool	do_fpe()
 		return (true);
 	else
 		return (false);
-
 }
 
 int	signal_fpe_test(void)

@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   04_null_test.c                                     :+:      :+:    :+:   */
+/*   exit_fatal.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmatsuka < rmatsuka@student.42tokyo.jp>    +#+  +:+       +#+        */
+/*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/10 19:54:42 by rmatsuka          #+#    #+#             */
-/*   Updated: 2021/05/10 22:58:12 by rmatsuka         ###   ########.fr       */
+/*   Created: 2021/05/11 11:28:45 by rmatsuka          #+#    #+#             */
+/*   Updated: 2021/05/13 22:08:59 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./../tester.h"
+#include "../includes/libunit.h"
 
-int memchr_null_test(void)
+void	exit_fatal(int line, char *file)
 {
-	void *p1;
-	void *p2;
-
-	p1 = ft_memchr(NULL,'a', 1);
-	p2 = memchr(NULL, 'a', 1);
-	if (p1 == p2)
-		return (0);
-	else
-	    return (-1);
+	write(STDERR_FILENO, "STDLIB ERROR\n", 13);
+	ft_put_s(file, STDERR_FILENO);
+	write(STDERR_FILENO, ":", 1);
+	ft_put_d(line, STDERR_FILENO);
+	write(STDERR_FILENO, "\n", 1);
 }

@@ -3,19 +3,20 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rmatsuka <rmatsuka@student.42tokyo.jp>     +#+  +:+       +#+         #
+#    By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/09 14:16:52 by tjinichi          #+#    #+#              #
-#    Updated: 2021/05/13 21:58:41 by tjinichi         ###   ########.fr        #
+#    Updated: 2021/05/15 03:58:34 by tjinichi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-# NAME = libunit.a
 TEST = libunit_test
 
-CC = gcc -g # -fsanitize=address
+CC = gcc
+CFLAGS =  -Wall -Werror -Wextra  # -g -fsanitize=address
 
-CFLAGS =  -Wall -Werror -Wextra# -g -fsanitize=address
+LIBDIR = 	./libft
+LIBS = 	$(LIBDIR)/libft.a
 
 TEST_SRCS =	tests/main.c \
 		tests/signal_test/00_launcher.c \
@@ -78,32 +79,38 @@ TEST_SRCS =	tests/main.c \
 		tests/memccpy_test/01_basic1_test.c \
 		tests/memccpy_test/02_basic2_test.c \
 		tests/memccpy_test/03_basic3_test.c \
-		tests/memccpy_test/04_null_test.c \
+		tests/memccpy_test/04_null1_test.c \
+		tests/memccpy_test/05_null2_test.c \
 		tests/memchr_test/00_launcher.c \
 		tests/memchr_test/01_basic1_test.c \
 		tests/memchr_test/02_basic2_test.c \
 		tests/memchr_test/03_basic3_test.c \
-		tests/memchr_test/04_null_test.c \
+		tests/memchr_test/04_null1_test.c \
+		tests/memchr_test/05_null2_test.c \
 		tests/memcmp_test/00_launcher.c \
 		tests/memcmp_test/01_basic1_test.c \
 		tests/memcmp_test/02_basic2_test.c \
 		tests/memcmp_test/03_basic3_test.c \
-		tests/memcmp_test/04_null_test.c \
+		tests/memcmp_test/04_null1_test.c \
+		tests/memcmp_test/05_null2_test.c \
 		tests/memcpy_test/00_launcher.c \
 		tests/memcpy_test/01_basic1_test.c \
 		tests/memcpy_test/02_basic2_test.c \
 		tests/memcpy_test/03_basic3_test.c \
-		tests/memcpy_test/04_null_test.c \
+		tests/memcpy_test/04_null1_test.c \
+		tests/memcpy_test/05_null2_test.c \
 		tests/memmove_test/00_launcher.c \
 		tests/memmove_test/01_basic1_test.c \
 		tests/memmove_test/02_basic2_test.c \
 		tests/memmove_test/03_basic3_test.c \
-		tests/memmove_test/04_null_test.c \
+		tests/memmove_test/04_null1_test.c \
+		tests/memmove_test/05_null2_test.c \
 		tests/memset_test/00_launcher.c \
 		tests/memset_test/01_basic1_test.c \
 		tests/memset_test/02_basic2_test.c \
 		tests/memset_test/03_basic3_test.c \
-		tests/memset_test/04_null_test.c \
+		tests/memset_test/04_null1_test.c \
+		tests/memset_test/05_null2_test.c \
 		tests/split_test/00_launcher.c \
 		tests/split_test/01_basic_test.c \
 		tests/split_test/02_empty1_test.c \
@@ -159,12 +166,18 @@ TEST_SRCS =	tests/main.c \
 		tests/strncmp_test/05_null1_test.c \
 		tests/strncmp_test/06_null2_test.c \
 		tests/strncmp_test/07_null3_test.c \
+		tests/strncmp_test/08_null4_test.c \
+		tests/strncmp_test/09_null5_test.c \
+		tests/strncmp_test/10_null6_test.c \
 		tests/strnstr_test/00_launcher.c \
 		tests/strnstr_test/01_basic1_test.c \
 		tests/strnstr_test/02_basic2_test.c \
 		tests/strnstr_test/03_basic3_test.c \
 		tests/strnstr_test/04_basic4_test.c \
-		tests/strnstr_test/05_null_test.c \
+		tests/strnstr_test/05_null1_test.c \
+		tests/strnstr_test/06_null2_test.c \
+		tests/strnstr_test/07_null3_test.c \
+		tests/strnstr_test/08_null4_test.c \
 		tests/strrchr_test/00_launcher.c \
 		tests/strrchr_test/01_basic_test.c \
 		tests/strrchr_test/02_empty1_test.c \
@@ -190,18 +203,23 @@ TEST_SRCS =	tests/main.c \
 		tests/toupper_test/00_launcher.c \
 		tests/toupper_test/01_all_test.c \
 
-
 TEST_OBJS = ${TEST_SRCS:.c=.o}
-
-LIBS = 	libft/libft.a
 
 all: $(LIBS)
 	make -C framework
 
+b_all: $(LIBS)
+	make bonus -C framework
+
 FRAMEWORK = framework/libunit.a
 
 test: all $(LIBS) $(TEST_OBJS)
-	$(CC) $(CFLAGS) -o $(TEST) $(TEST_OBJS) $(LIBS) $(FRAMEWORK)
+	$(CC) $(CFLAGS) -o $(TEST) $(TEST_OBJS) -L $(LIBDIR) -lft $(FRAMEWORK)
+	./$(TEST) || true
+
+test_bonus: b_all $(LIBS) $(TEST_OBJS)
+	$(CC) $(CFLAGS) -o $(TEST) $(TEST_OBJS) -L $(LIBDIR) -lft $(FRAMEWORK)
+	./$(TEST) || true
 
 $(LIBS): FORCE
 	make -C libft/

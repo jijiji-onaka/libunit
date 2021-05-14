@@ -12,7 +12,7 @@
 
 #include "./../tester.h"
 
-static bool	do_ill()
+static bool	do_ill(void)
 {
 	raise(1);
 	return (true);

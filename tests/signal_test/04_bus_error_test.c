@@ -6,15 +6,15 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 13:52:23 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/05/09 14:55:32 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/05/15 03:57:50 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../tester.h"
 
-static bool	do_bus_error()
+static bool	do_bus_error(void)
 {
-	char *str;
+	char	*str;
 
 	str = "32Tokyo";
 	str[0] = '4';

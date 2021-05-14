@@ -1,0 +1,1829 @@
+----------------- signal test -----------------
+> True Test    : [KO]
+[Test case] :
+
+> False Test   : [KO]
+[Test case] :
+
+> Segv Test    : [SEGV]
+[Test case] :
+
+> buse Test    : [BUSE]
+[Test case] :
+
+> Time Test    : [TIMEOUT]
+[Test case] :
+
+> Abort Test   : [ABRT]
+[Test case] :
+
+> Fpe Test     : [FPE]
+[Test case] :
+
+> Crash Test   : [CRASH]
+[Test case] :
+
+> Ill Test     : [ILL]
+[Test case] :
+
+
+----------------- atoi test -----------------
+> Basic Test          : [KO]
+[Test case] :
+
+if (ft_atoi("42") == atoi("42"))
+	return (0);
+else
+	return (-1);
+
+
+----------------- bzero test -----------------
+> Basic Test          : [KO]
+[Test case] :
+
+char s1[100], s2[100];
+memset(s1, 'a', 100);
+memset(s2, 'a', 100);
+ft_bzero(s1, 50);
+bzero(s2, 50);
+if (!memcmp(s1, s2, 100))
+	return (0);
+else
+	return (-1);
+
+> Null Test           : [KO]
+[Test case] :
+
+ft_bzero(NULL, 50);
+bzero(NULL, 50);
+
+> BigSize Test        : [KO]
+[Test case] :
+
+char s1[100000], s2[100000];
+memset(s1, 'a', 100000);
+memset(s2, 'a', 100000);
+ft_bzero(s1, 50);
+bzero(s2, 50);
+if (!memcmp(s1, s2, 100000))
+	return (0);
+else
+	return (-1);
+
+
+----------------- calloc test -----------------
+> Basic Test          : [KO]
+[Test case] :
+
+char	*s1;
+char	*s2;
+int		result;
+
+s1 = ft_calloc(100, 1);
+s2 = calloc(100, 1);
+result = 0;
+if (!memcmp(s1, s2, 100))
+	result = 0;
+else
+	result = -1;
+free(s1);
+free(s2);
+return (result);
+
+> Zero Test           : [KO]
+[Test case] :
+
+char	*s1;
+char	*s2;
+int		result;
+
+s1 = ft_calloc(0, 0);
+s2 = calloc(0, 0);
+result = 0;
+if (!memcmp(s1, s2, 100))
+	result = 0;
+else
+	result = -1;
+free(s1);
+free(s2);
+return (result);
+
+> BigSize Test        : [KO]
+[Test case] :
+
+char	*s1;
+char	*s2;
+int		result;
+
+s1 = ft_calloc(100000, 1);
+s2 = calloc(100000, 1);
+result = 0;
+if (!memcmp(s1, s2, 100000))
+	result = 0;
+else
+	result = -1;
+free(s1);
+free(s2);
+return (result);
+
+> Minus Test          : [KO]
+[Test case] :
+
+char	*s1;
+char	*s2;
+int		result;
+
+s1 = ft_calloc(-42, -42);
+s2 = calloc(-42, -42);
+result = 0;
+if (s1 == s2)
+	result = 0;
+else
+	result = -1;
+free(s1);
+free(s2);
+return (result);
+
+
+----------------- isalnum test -----------------
+> Basic1 Test          : [KO]
+[Test case] :
+
+if (ft_isalnum(42) == isalnum(42))
+	return (0);
+else
+	return (-1);
+
+> Basic2 Test          : [KO]
+[Test case] :
+
+if (ft_isalnum(4200) == isalnum(4200))
+	return (0);
+else
+	return (-1);
+
+> All Test             : [KO]
+[Test case] :
+
+int	i;
+
+i = 0;
+while (i < UCHAR_MAX)
+{
+	if (ft_isalnum(i) != isalnum(i))
+		return (-1);
+	i++;
+}
+return (0);
+
+
+----------------- isalpha test -----------------
+> Basic1 Test          : [KO]
+[Test case] :
+
+if (ft_isalpha(42) == isalpha(42))
+	return (0);
+else
+	return (-1);
+
+> Basic2 Test          : [KO]
+[Test case] :
+
+if (ft_isalpha(4200) == isalpha(4200))
+	return (0);
+else
+	return (-1);
+
+> All Test             : [KO]
+[Test case] :
+
+int	i;
+
+i = 0;
+while (i < UCHAR_MAX)
+{
+	if (ft_isalpha(i) != isalpha(i))
+		return (-1);
+	i++;
+}
+return (0);
+
+
+----------------- isascii test -----------------
+> Basic1 Test          : [KO]
+[Test case] :
+
+if (ft_isascii(42) == isascii(42))
+	return (0);
+else
+	return (-1);
+
+> Basic2 Test          : [KO]
+[Test case] :
+
+if (ft_isascii(4200) == isascii(4200))
+	return (0);
+else
+	return (-1);
+
+> All Test             : [KO]
+[Test case] :
+
+int	i;
+
+i = 0;
+while (i < UCHAR_MAX)
+{
+	if (ft_isascii(i) != isascii(i))
+		return (-1);
+	i++;
+}
+return (0);
+
+
+----------------- isdigit test -----------------
+> Basic1 Test          : [KO]
+[Test case] :
+
+if (ft_isdigit(42) == isdigit(42))
+	return (0);
+else
+	return (-1);
+
+> Basic2 Test          : [KO]
+[Test case] :
+
+if (ft_isdigit(4200) == isdigit(4200))
+	return (0);
+else
+	return (-1);
+
+> All Test             : [KO]
+[Test case] :
+
+int	i;
+
+i = 0;
+while (i < UCHAR_MAX)
+{
+	if (ft_isdigit(i) != isdigit(i))
+		return (-1);
+	i++;
+}
+return (0);
+
+
+----------------- isprint test -----------------
+> Basic1 Test          : [KO]
+[Test case] :
+
+if (ft_isprint(42) == isprint(42))
+	return (0);
+else
+	return (-1);
+
+> Basic2 Test          : [KO]
+[Test case] :
+
+if (ft_isprint(4200) == isprint(4200))
+	return (0);
+else
+	return (-1);
+
+> All Test             : [KO]
+[Test case] :
+
+int	i;
+
+i = 0;
+while (i < UCHAR_MAX)
+{
+	if (ft_isprint(i) != isprint(i))
+		return (-1);
+	i++;
+}
+return (0);
+
+
+----------------- itoa test -----------------
+> Basic Test           : [KO]
+[Test case] :
+
+char	*str;
+
+str = ft_itoa(42);
+if (!strcmp(str, "42"))
+{
+	free(str);
+	return (0);
+}
+else
+{
+	free(str);
+	return (-1);
+}
+
+> IntMax Test          : [KO]
+[Test case] :
+
+char	*str;
+bool	ret;
+
+str = ft_itoa(2147483647);
+ret = strcmp(str, "2147483647");
+free(str);
+if (ret == 0)
+	return (0);
+else
+	return (-1);
+
+> IntMin Test          : [KO]
+[Test case] :
+
+char	*str;
+bool	ret;
+
+str = ft_itoa(-2147483648);
+ret = strcmp(str, "-2147483648");
+free(str);
+if (ret == 0)
+	return (0);
+else
+	return (-1);
+
+> Zero Test            : [KO]
+[Test case] :
+
+char	*str;
+bool	ret;
+
+str = ft_itoa(0);
+ret = strcmp(str, "0");
+free(str);
+if (ret == 0)
+	return (0);
+else
+	return (-1);
+
+
+----------------- memccpy test -----------------
+> Basic1 Test          : [KO]
+[Test case] :
+
+char	*s;
+char	s1[10];
+char	s2[10];
+
+s = "hello";
+ft_memccpy(s1, s, '2', 10);
+memccpy(s2, s, '2', 10);
+if (!strcmp(s1, s2))
+	return (0);
+else
+	return (-1);
+
+> Basic2 Test          : [KO]
+[Test case] :
+
+char	*s;
+char	s1[10];
+char	s2[10];
+
+s = "42tokyo";
+ft_memccpy(s1, s, 'a', 10);
+memccpy(s2, s, 'a', 10);
+if (!strcmp(s1, s2))
+	return (0);
+else
+	return (-1);
+
+> Basic3 Test          : [KO]
+[Test case] :
+
+char	*s;
+char	s1[10];
+char	s2[10];
+
+s = "42tokyo";
+ft_memccpy(s1, s, 'a', 1);
+memccpy(s2, s, 'a', 1);
+if (!strcmp(s1, s2))
+	return (0);
+else
+	return (-1);
+
+> Null1 Test           : [KO]
+[Test case] :
+
+char	s1[10];
+char	s2[10];
+
+ft_memccpy(s1, NULL, 'a', 10);
+memccpy(s2, NULL, 'a', 10);
+
+> Null1 Test           : [KO]
+[Test case] :
+
+char	s1[10];
+char	s2[10];
+
+if (ft_memccpy(s1, NULL, 'a', 0) == memccpy(s2, NULL, 'a', 0))
+	return (0);
+else
+	return (-1);
+
+
+----------------- memchr test -----------------
+> Basic1 Test          : [KO]
+[Test case] :
+
+char	*s;
+void	*p1;
+void	*p2;
+
+s = "42tokyo";
+p1 = ft_memchr(s,'t', sizeof(s));
+p2 = memchr(s, 't', sizeof(s));
+if (p1 == p2)
+	return (0);
+else
+	return (-1);
+
+> Basic2 Test          : [KO]
+[Test case] :
+
+char *s;
+void *p1;
+void *p2;
+
+s = "42tokyo";
+p1 = ft_memchr(s,'a', sizeof(s));
+p2 = memchr(s, 'a', sizeof(s));
+if (p1 == p2)
+	return (0);
+else
+	return (-1);
+
+> Basic3 Test          : [KO]
+[Test case] :
+
+char	*s;
+void	*p1;
+void	*p2;
+
+s = "42tokyo";
+p1 = ft_memchr(s,'k', 3);
+p2 = memchr(s, 'k', 3);
+if (p1 == p2)
+	return (0);
+else
+	return (-1);
+
+> Null1 Test           : [KO]
+[Test case] :
+
+char	s1[10];
+char	s2[10];
+
+ft_memchr(NULL, 'a', 1);
+memchr(NULL, 'a', 1);
+
+> Null2 Test           : [KO]
+[Test case] :
+
+char	s1[10];
+char	s2[10];
+
+if (ft_memchr(NULL, 'a', 0) == memchr(NULL, 'a', 0))
+	return (0);
+else
+	return (-1);
+
+
+----------------- memcmp test -----------------
+> Basic1 Test          : [KO]
+[Test case] :
+
+char	*s1;
+char	*s2;
+int		ans1;
+int		ans2;
+
+s1 = "hello";
+s2 = "hello";
+ans1 = ft_memcmp(s1, s2, 5);
+ans2 = memcmp(s1, s2, 5);
+if (ans1 == ans2)
+	return (0);
+else
+	return (-1);
+
+> Basic2 Test          : [KO]
+[Test case] :
+
+char	*s1;
+char	*s2;
+int		ans1;
+int		ans2;
+
+s1 = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+s2 = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+ans1 = ft_memcmp(s1, s2, 20);
+ans2 = memcmp(s1, s2, 20);
+if (ans1 == ans2)
+	return (0);
+else
+	return (-1);
+
+> Basic3 Test          : [KO]
+[Test case] :
+
+char	*s1;
+char	*s2;
+int		ans1;
+int		ans2;
+
+s1 = "abcdefghij";
+s2 = "1234567890";
+ans1 = ft_memcmp(s1, s2, 10);
+ans2 = memcmp(s1, s2, 10);
+if (ans1 == ans2)
+	return (0);
+else
+	return (-1);
+
+> Null1 Test           : [KO]
+[Test case] :
+
+char	*s1;
+
+s1 = "hello";
+ft_memcmp(s1, NULL, 10);
+memcmp(s1, NULL, 10);
+
+> Null1 Test           : [KO]
+[Test case] :
+
+char	*s1;
+
+s1 = "hello";
+if (ft_memcmp(s, NULL, 0) == memcmp(s, NULL, 0))
+	return (0);
+else
+	return (-1);
+
+
+----------------- memcpy test -----------------
+> Basic1 Test          : [KO]
+[Test case] :
+
+char	*s1;
+char	*s2;
+int		ans;
+
+s1 = malloc(sizeof(char) * 100);
+s2 = malloc(sizeof(char) * 100);
+memset(s1, 'a', 100 - 1);
+memset(s2, 'a', 100 - 1);
+ft_memcpy(s1, "hello", 5);
+memcpy(s2, "hello", 5);
+if (!strcmp(s1, s2))
+	ans = 0;
+else
+	ans = -1;
+free(s1);
+free(s2);
+return (ans);
+
+> Basic2 Test          : [KO]
+[Test case] :
+
+char	*s1;
+char	*s2;
+int		ans;
+
+s1 = malloc(sizeof(char) * 100);
+s2 = malloc(sizeof(char) * 100);
+memset(s1, '1', 100);
+memset(s2, '1', 100);
+ft_memcpy(s1, "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", 10);
+memcpy(s2, "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", 10);
+if (!strcmp(s1, s2))
+	ans = 0;
+else
+	ans = -1;
+free(s1);
+free(s2);
+return (ans);
+
+> Basic3 Test          : [KO]
+[Test case] :
+
+char	*s1;
+char	*s2;
+int		ans;
+
+s1 = malloc(sizeof(char) * 100);
+s2 = malloc(sizeof(char) * 100);
+memset(s1, '1', 100);
+memset(s2, '1', 100);
+ft_memcpy(s1, "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", 20);
+memcpy(s2, "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", 20);
+if (strcmp(s1, s2))
+	ans = 0;
+else
+	ans = -1;
+free(s1);
+free(s2);
+return  (ans);
+
+> Null1 Test           : [KO]
+[Test case] :
+
+char	s1[101];
+char	s2[101];
+
+memset(s1, 'a', 100);
+memset(s2, 'a', 100);
+ft_memcpy(s1, NULL, 5);
+memcpy(s2, NULL, 5);
+
+> Null2 Test           : [KO]
+[Test case] :
+
+char	*s1;
+
+s1 = "hello";
+if (ft_memcpy(s, NULL, 0) == memcpy(s, NULL, 0))
+	return (0);
+else
+	return (-1);
+
+
+----------------- memmove test -----------------
+> Basic1 Test          : [KO]
+[Test case] :
+
+char	*s1;
+char	*s2;
+int		ans;
+
+s1 = malloc(sizeof(char) * 100);
+s2 = malloc(sizeof(char) * 100);
+memset(s1, 'a', 100);
+memset(s2, 'a', 100);
+ft_memmove(s1, "hello", 5);
+memmove(s2, "hello", 5);
+if (!strcmp(s1, s2))
+	ans = 0;
+else
+	ans = -1;
+free(s1);
+free(s2);
+return (ans);
+
+> Basic2 Test          : [KO]
+[Test case] :
+
+char	*s1;
+char	*s2;
+int		ans;
+
+s1 = malloc(sizeof(char) * 100);
+s2 = malloc(sizeof(char) * 100);
+memset(s1, '1', 100);
+memset(s2, '1', 100);
+ft_memmove(s1, "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", 10);
+memmove(s2, "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", 10);
+if (!strcmp(s1, s2))
+	ans = 0;
+else
+	ans = -1;
+free(s1);
+free(s2);
+return (ans);
+
+> Basic3 Test          : [KO]
+[Test case] :
+
+> Null1 Test           : [KO]
+[Test case] :
+
+char	s1[101];
+char	s2[101];
+
+memset(s1, 'a', 100);
+memset(s2, 'a', 100);
+ft_memmove(s1, NULL, 5);
+memmove(s2, NULL, 5);
+
+> Null2 Test           : [KO]
+[Test case] :
+
+char	*s1;
+
+s1 = "hello";
+if (ft_memmove(s, NULL, 0) == memmove(s, NULL, 0))
+	return (0);
+else
+	return (-1);
+
+
+----------------- memset test -----------------
+> Basic1 Test          : [KO]
+[Test case] :
+
+char	*s1;
+char	*s2;
+int		ans;
+
+s1 = malloc(sizeof(char) * 100);
+s2 = malloc(sizeof(char) * 100);
+ft_memset(s1, 'a', 100);
+memset(s2, 'a', 100);
+if (!strcmp(s1, s2))
+	ans = 0;
+else
+	ans = -1;
+free(s1);
+free(s2);
+return (ans);
+
+> Basic2 Test          : [KO]
+[Test case] :
+
+char	*s1;
+char	*s2;
+int		ans;
+
+s1 = malloc(sizeof(char) * 1);
+s2 = malloc(sizeof(char) * 1);
+ft_memset(s1, '0', 1);
+memset(s2, '0', 1);
+if (!strcmp(s1, s2))
+	ans = 0;
+else
+	ans = -1;
+free(s1);
+free(s2);
+return (ans);
+
+> Basic3 Test          : [KO]
+[Test case] :
+
+char	*s1;
+char	*s2;
+int		ans;
+
+s1 = malloc(sizeof(char) * 100000);
+s2 = malloc(sizeof(char) * 100000);
+ft_memset(s1, 'a', 100000);
+memset(s2, 'a', 100000);
+if (!strcmp(s1, s2))
+	ans = 0;
+else
+	ans = -1;
+free(s1);
+free(s2);
+return (ans);
+
+> Null1 Test           : [KO]
+[Test case] :
+
+ft_memset(NULL, '\0', 100);
+memset(NULL, '\0', 100);
+
+> Null2 Test           : [KO]
+[Test case] :
+
+if (ft_memset(NULL, 0, 0) == memset(NULL, 0, 0))
+	return (0);
+else
+	return (-1);
+
+
+----------------- split test -----------------
+> Basic Test          : [KO]
+[Test case] :
+
+char		**split;
+const char	*ans[] = {"Welcome", "to", "42Tokyo", NULL};
+int			i;
+bool		res;
+
+split = ft_split("-Welcome-to-42Tokyo-", '-');
+i = 0;
+while (split[i] && ans[i])
+{
+	if (strcmp(split[i], ans[i]) != 0)
+		return (false);
+	free(split[i]);
+	i++;
+}
+if (split[i] == NULL && ans[i] == NULL)
+	res = true;
+else
+	res = false;
+free(split);
+return (res);
+
+> Empty1 Test         : [KO]
+[Test case] :
+
+char		**split;
+const char	*ans[] = {NULL};
+int			i;
+bool		res;
+
+split = ft_split("", '-');
+i = 0;
+while (split[i] && ans[i])
+{
+	if (strcmp(split[i], ans[i]) != 0)
+		return (false);
+	free(split[i]);
+	i++;
+}
+if (split[i] == NULL && ans[i] == NULL)
+	res = true;
+else
+	res = false;
+free(split);
+return (res);
+
+> Empty2 Test         : [KO]
+[Test case] :
+
+char		**split;
+const char	*ans[] = {"Hello", NULL};
+int			i;
+bool		res;
+
+split = ft_split("Hello", '\0');
+i = 0;
+while (split[i] && ans[i])
+{
+	if (strcmp(split[i], ans[i]) != 0)
+		return (false);
+	free(split[i]);
+	i++;
+}
+if (split[i] == NULL && ans[i] == NULL)
+	res = true;
+else
+	res = false;
+free(split);
+return (res);
+
+> Empty3 Test         : [KO]
+[Test case] :
+
+char		**split;
+const char	*ans[] = {NULL};
+int			i;
+bool		res;
+
+split = ft_split("", '\0');
+i = 0;
+while (split[i] && ans[i])
+{
+	if (strcmp(split[i], ans[i]) != 0)
+		return (false);
+	free(split[i]);
+	i++;
+}
+if (split[i] == NULL && ans[i] == NULL)
+	res = true;
+else
+	res = false;
+free(split);
+return (res);
+
+> Same chr Test       : [KO]
+[Test case] :
+
+char		**split;
+const char	*ans[] = {NULL};
+int			i;
+bool		res;
+
+split = ft_split("777777", '7');
+i = 0;
+while (split[i] && ans[i])
+{
+	if (strcmp(split[i], ans[i]) != 0)
+		return (false);
+	free(split[i]);
+	i++;
+}
+if (split[i] == NULL && ans[i] == NULL)
+	res = true;
+else
+	res = false;
+free(split);
+return (res);
+
+> Null Test           : [KO]
+[Test case] :
+
+char		**split;
+
+split = ft_split(NULL, '7');
+if (split == NULL)
+	return (true);
+return (false);
+
+
+----------------- strchr test -----------------
+> Basic Test          : [KO]
+[Test case] :
+
+const char	*str = "42Tokyo";
+const char	 chr= 'T';
+
+if (strchr(str, chr) == ft_strchr(str, chr))
+	return (0);
+else
+	return (-1);
+
+> Empty1 Test         : [KO]
+[Test case] :
+
+const char	*str = "";
+const char	 chr= 'T';
+
+if (strchr(str, chr) == ft_strchr(str, chr))
+	return (0);
+else
+	return (-1);
+
+> Empty2 Test         : [KO]
+[Test case] :
+
+const char	*str = "42Tokyo";
+const char	 chr= '\0';
+
+if (strchr(str, chr) == ft_strchr(str, chr))
+	return (0);
+else
+	return (-1);
+
+> Empty3 Test         : [KO]
+[Test case] :
+
+const char	*str = "";
+const char	 chr= '
+> Match head Test     : [KO]
+[Test case] :
+
+const char	*str = "766668";
+const char	 chr= '7';
+
+if (strchr(str, chr) == ft_strchr(str, chr))
+	return (0);
+else
+	return (-1);
+
+> Match tail Test     : [KO]
+[Test case] :
+
+const char	*str = "766668";
+const char	 chr= '8';
+
+if (strchr(str, chr) == ft_strchr(str, chr))
+	return (0);
+else
+	return (-1);
+
+
+----------------- strdup test -----------------
+> Basic Test          : [KO]
+[Test case] :
+
+const char	*str = "42Tokyo";
+char	*ft;
+char	*libc;
+
+ft = ft_strdup(str);
+libc = strdup(str);
+if (strcmp(ft, libc) == 0 && ft != libc)
+{
+	free(ft);
+	free(libc);
+	return (true);
+}
+else
+{
+	free(ft);
+	free(libc);
+	return (false);
+}
+
+> Empty Test          : [KO]
+[Test case] :
+
+const char	*str = "";
+char	*ft;
+char	*libc;
+
+ft = ft_strdup(str);
+libc = strdup(str);
+if (strcmp(ft, libc) == 0 && ft != libc)
+{
+	free(ft);
+	free(libc);
+	return (true);
+}
+else
+{
+	free(ft);
+	free(libc);
+	return (false);
+}
+
+----------------- strjoin test -----------------
+> Basic Test           : [KO]
+[Test case] :
+
+const char	*ans = "42Tokyo";
+char	*ft;
+
+ft = ft_strjoin("42", "Tokyo");
+if (strcmp(ft, ans) == 0)
+{
+	free(ft);
+	return (true);
+}
+else
+{
+	free(ft);
+	return (false);
+}
+
+> Empty1 Test          : [KO]
+[Test case] :
+
+const char	*ans = "42Tokyo";
+char	*ft;
+
+ft = ft_strjoin("", "42Tokyo");
+if (strcmp(ft, ans) == 0)
+{
+	free(ft);
+	return (true);
+}
+else
+{
+	free(ft);
+	return (false);
+}
+
+> Empty2 Test          : [KO]
+[Test case] :
+
+const char	*ans = "42Tokyo";
+char	*ft;
+
+ft = ft_strjoin("42Tokyo", "");
+if (strcmp(ft, ans) == 0)
+{
+	free(ft);
+	return (true);
+}
+else
+{
+	free(ft);
+	return (false);
+}
+
+> Empty3 Test          : [KO]
+[Test case] :
+
+const char	*ans = "";
+char	*ft;
+ft = ft_strjoin("", "");
+if (strcmp(ft, ans) == 0)
+{
+	free(ft);
+	return (true);
+}
+else
+{
+	free(ft);
+	return (false);
+}
+
+> Null1 Test           : [KO]
+[Test case] :
+
+char	*ft;
+
+ft = ft_strjoin(NULL, );
+if (ft == NULL)
+	return (true);
+return (false);
+
+> Null2 Test           : [KO]
+[Test case] :
+
+char	*ft;
+
+ft = ft_strjoin(, NULL);
+if (ft == NULL)
+	return (true);
+return (false);
+
+> Null3 Test           : [KO]
+[Test case] :
+
+char	*ft;
+
+ft = ft_strjoin(NULL, NULL);
+if (ft == NULL)
+	return (true);
+return (false);
+
+
+----------------- strlcat test -----------------
+> Basic1 Test          : [KO]
+[Test case] :
+
+char	dst1[20] = "Hello ";
+char	dst2[20] = "Hello ";
+char	src[10] = "42Tokyo";
+size_t	res1;
+size_t	res2;
+
+res1 = ft_strlcat(dst1, src, 15);
+res2 = strlcat(dst2, src, 15);
+if (strcmp(dst1, dst2) == 0 && res1 == res2)
+	return (true);
+else
+	return (false);
+
+> Basic2 Test          : [KO]
+[Test case] :
+
+char	dst1[20] = "Hello ";
+char	dst2[20] = "Hello ";
+char	src[10] = "42Tokyo";
+size_t	res1;
+size_t	res2;
+
+res1 = ft_strlcat(dst1, src, 3);
+res2 = strlcat(dst2, src, 3);
+if (strcmp(dst1, dst2) == 0 && res1 == res2)
+	return (true);
+else
+	return (false);
+
+> Basic3 Test          : [KO]
+[Test case] :
+
+char	dst1[20] = "Hello ";
+char	dst2[20] = "Hello ";
+char	src[10] = "42Tokyo";
+size_t	res1;
+size_t	res2;
+
+res1 = ft_strlcat(dst1, src, 6);
+res2 = strlcat(dst2, src, 6);
+if (strcmp(dst1, dst2) == 0 && res1 == res2)
+	return (true);
+else
+	return (false);
+
+> Basic4 Test          : [KO]
+[Test case] :
+
+char	dst1[20] = "Hello ";
+char	dst2[20] = "Hello ";
+char	src[10] = "42Tokyo";
+size_t	res1;
+size_t	res2;
+
+res1 = ft_strlcat(dst1, src, 9);
+res2 = strlcat(dst2, src, 9);
+if (strcmp(dst1, dst2) == 0 && res1 == res2)
+	return (true);
+else
+	return (false);
+
+> Basic5 Test          : [KO]
+[Test case] :
+
+> Null1 Test           : [SEGV]
+[Test case] :
+
+> Null2 Test           : [KO]
+[Test case] :
+
+char	src[10] = "42Tokyo";
+size_t	res1;
+size_t	res2;
+
+res1 = ft_strlcat(NULL, src, 1);
+res2 = strlcat(NULL, src, 1);
+if (res1 == res2)
+	return (true);
+else
+	return (false);
+
+
+----------------- strlcpy test -----------------
+> Basic1 Test          : [KO]
+[Test case] :
+
+char	dst1[20] = "Hello ";
+char	dst2[20] = "Hello ";
+char	src[10] = "42Tokyo";
+size_t	res1;
+size_t	res2;
+
+res1 = ft_strlcpy(dst1, src, 0);
+res2 = strlcpy(dst2, src, 0);
+if (strcmp(dst1, dst2) == 0 && res1 == res2)
+	return (true);
+else
+	return (false);
+
+> Basic2 Test          : [KO]
+[Test case] :
+
+char	dst1[20] = "Hello ";
+char	dst2[20] = "Hello ";
+char	src[10] = "42Tokyo";
+size_t	res1;
+size_t	res2;
+
+res1 = ft_strlcpy(dst1, src, 3);
+res2 = strlcpy(dst2, src, 3);
+if (strcmp(dst1, dst2) == 0 && res1 == res2)
+	return (true);
+else
+	return (false);
+
+> Basic3 Test          : [KO]
+[Test case] :
+
+char	dst1[20] = "Hello ";
+char	dst2[20] = "Hello ";
+char	src[10] = "42Tokyo";
+size_t	res1;
+size_t	res2;
+
+res1 = ft_strlcpy(dst1, src, 7);
+res2 = strlcpy(dst2, src, 7);
+if (strcmp(dst1, dst2) == 0 && res1 == res2)
+	return (true);
+else
+	return (false);
+
+> Basic4 Test          : [KO]
+[Test case] :
+
+char	dst1[20] = "Hello ";
+char	dst2[20] = "Hello ";
+char	src[10] = "42Tokyo";
+size_t	res1;
+size_t	res2;
+
+res1 = ft_strlcpy(dst1, src, 1);
+res2 = strlcpy(dst2, src, 1);
+if (strcmp(dst1, dst2) == 0 && res1 == res2)
+	return (true);
+else
+	return (false);
+
+> Basic5 Test          : [KO]
+[Test case] :
+
+char	dst1[100] = "Hello ";
+char	dst2[100] = "Hello ";
+char	src[10] = "42Tokyo";
+size_t	res1;
+size_t	res2;
+
+res1 = ft_strlcpy(dst1, src, 100);
+res2 = strlcpy(dst2, src, 100);
+if (strcmp(dst1, dst2) == 0 && res1 == res2)
+	return (true);
+else
+	return (false);
+
+> Null1 Test           : [KO]
+[Test case] :
+
+char	src[10] = "42Tokyo";
+size_t	res1;
+size_t	res2;
+
+res1 = ft_strlcpy(NULL, src, 0);
+res2 = strlcpy(NULL, src, 0);
+if (res1 == res2)
+	return (true);
+else
+	return (false);
+
+> Null2 Test           : [KO]
+[Test case] :
+
+char	src[10] = "42Tokyo";
+size_t	res1;
+size_t	res2;
+
+res1 = ft_strlcpy(NULL, src, 1);
+res2 = strlcpy(NULL, src, 1);
+if (res1 == res2)
+	return (true);
+else
+	return (false);
+
+
+----------------- strlen test -----------------
+> Basic Test          : [KO]
+[Test case] :
+
+if (ft_strlen("42Tokyo") == strlen("42Toyko"))
+	return (0);
+else
+	return (-1);
+
+> Null Test           : [KO]
+[Test case] :
+
+if (ft_strlen(NULL) == strlen(NULL))
+	return (0);
+else
+	return (-1);
+
+> Long string Test    : [KO]
+[Test case] :
+
+char	*str;
+int		i;
+bool	ret;
+
+str = malloc((size_t)INT_MAX + 1);
+if (str == NULL)
+	exit(1);
+i = -1;
+while (++i < INT_MAX)
+	str[i] = '7';
+str[i] = '
+
+----------------- strmapi test -----------------
+> Basic Test           : [KO]
+[Test case] :
+
+const char	*ans = "42tokyo";
+char		*src;
+char		*res;
+
+src = "42TOKYO";
+res = ft_strmapi(src, tolower_tmp);
+if (strcmp(ans, res) == 0)
+{
+	free(res);
+	return (true);
+}
+else
+{
+	free(res);
+	return (false);
+}
+
+> Null1 Test           : [KO]
+[Test case] :
+
+char		*res;
+
+res = ft_strmapi(NULL, tolower_tmp);
+if (res == NULL)
+	return (true);
+else
+	return (false);
+
+> Null2 Test           : [KO]
+[Test case] :
+
+char		*src;
+char		*res;
+
+src = "42TOKYO";
+res = ft_strmapi(src, NULL);
+if (res == NULL)
+	return (true);
+else
+	return (false);
+
+> Null3 Test           : [KO]
+[Test case] :
+
+char		*res;
+
+res = ft_strmapi(NULL, NULL);
+if (res == NULL)
+	return (true);
+else
+	return (false);
+
+
+----------------- strncmp test -----------------
+> Basic1 Test          : [KO]
+[Test case] :
+
+if (strncmp("hello", "hello", 5) == ft_strncmp("hello", "hello", 5))
+	return (0);
+else
+	return (-1);
+
+> Basic2 Test          : [KO]
+[Test case] :
+
+if (strncmp("hello", "hello", 0) == ft_strncmp("hello", "hello", 0))
+	return (0);
+else
+	return (-1);
+
+> Basic3 Test          : [KO]
+[Test case] :
+
+if (strncmp("hello", "hello", 10) == ft_strncmp("hello", "hello", 10))
+	return (0);
+else
+	return (-1);
+
+> Basic4 Test          : [KO]
+[Test case] :
+
+if (strncmp("heÿllo", "ÿ", 5) == ft_strncmp("heÿllo", "ÿ", 5))
+	return (0);
+else
+	return (-1);
+
+> Null1 Test           : [SEGV]
+[Test case] :
+
+> Null2 Test           : [SEGV]
+[Test case] :
+
+> Null3 Test           : [SEGV]
+[Test case] :
+
+> Null4 Test           : [KO]
+[Test case] :
+
+if (strncmp(NULL, "ÿ", 1) == ft_strncmp(NULL, "ÿ", 1))
+	return (0);
+else
+	return (-1);
+
+> Null5 Test           : [KO]
+[Test case] :
+
+if (strncmp("ÿ", NULL, 1) == ft_strncmp("ÿ", NULL, 1))
+	return (0);
+else
+	return (-1);
+
+> Null6 Test           : [KO]
+[Test case] :
+
+if (strncmp(NULL, NULL, 1) == ft_strncmp(NULL, NULL, 1))
+	return (0);
+else
+	return (-1);
+
+
+----------------- strnstr test -----------------
+> Basic1 Test          : [KO]
+[Test case] :
+
+const char	*big = "Foo Bar Baz";
+const char	*small = "Bar";
+char		*ft;
+char		*libc;
+
+ft = ft_strnstr(big, small, 6);
+libc = strnstr(big, small, 6);
+if (ft == libc)
+	return (true);
+return (false);
+
+> Basic2 Test          : [KO]
+[Test case] :
+
+const char	*big = "Foo Bar Baz";
+const char	*small = "Bar";
+char		*ft;
+char		*libc;
+
+ft = ft_strnstr(big, small, 7);
+libc = strnstr(big, small, 7);
+if (ft == libc)
+	return (true);
+return (false);
+
+> Basic3 Test          : [KO]
+[Test case] :
+
+const char	*big = "Foo Bar Baz";
+const char	*small = "Ban";
+char		*ft;
+char		*libc;
+
+ft = ft_strnstr(big, small, 7);
+libc = strnstr(big, small, 7);
+if (ft == libc)
+	return (true);
+return (false);
+
+> Basic4 Test          : [KO]
+[Test case] :
+
+const char	*big = "Foo Bar Baz";
+const char	*small = "z";
+char		*ft;
+char		*libc;
+
+ft = ft_strnstr(big, small, -1);
+libc = strnstr(big, small, -1);
+if (ft == libc)
+	return (true);
+return (false);
+
+> Null1 Test           : [KO]
+[Test case] :
+
+const char	*small = "z";
+char		*ft;
+char		*libc;
+
+ft = ft_strnstr(NULL, small, 0);
+libc = strnstr(NULL, small, 0);
+if (ft == libc)
+	return (true);
+return (false);
+
+> Null2 Test           : [KO]
+[Test case] :
+
+if (strnstr(NULL, "a", 0) == ft_strnstr(NULL, "a", 0))
+	return (0);
+else
+	return (-1);
+
+> Null3 Test           : [KO]
+[Test case] :
+
+if (strnstr(NULL, NULL, 0) == ft_strnstr(NULL, NULL, 0))
+	return (0);
+else
+	return (-1);
+
+> Null4 Test           : [KO]
+[Test case] :
+
+if (strnstr(NULL, "a", 1) == ft_strnstr(NULL, "a", 1))
+	return (0);
+else
+	return (-1);
+
+
+----------------- strrchr test -----------------
+> Basic Test           : [KO]
+[Test case] :
+
+const char	*str = "42Tokyo";
+const char	 chr= 'T';
+
+if (strrchr(str, chr) == ft_strrchr(str, chr))
+	return (0);
+else
+	return (-1);
+
+> Empty1 Test          : [KO]
+[Test case] :
+
+const char	*str = "";
+const char	 chr= 'T';
+
+if (strrchr(str, chr) == ft_strrchr(str, chr))
+	return (0);
+else
+	return (-1);
+
+> Empty2 Test          : [KO]
+[Test case] :
+
+const char	*str = "42Tokyo";
+const char	 chr= '
+> Empty3 Test          : [KO]
+[Test case] :
+
+const char	*str = "";
+const char	 chr= '
+> Match head Test      : [KO]
+[Test case] :
+
+const char	*str = "766668";
+const char	 chr= '7';
+
+if (strrchr(str, chr) == ft_strrchr(str, chr))
+	return (0);
+else
+	return (-1);
+
+> Match tail Test      : [KO]
+[Test case] :
+
+const char	*str = "766668";
+const char	 chr= '8';
+
+if (strrchr(str, chr) == ft_strrchr(str, chr))
+	return (0);
+else
+	return (-1);
+
+
+----------------- strtrim test -----------------
+> Basic1 Test           : [KO]
+[Test case] :
+
+const char	*ans = "42Tokyo";
+char		*ft;
+bool		ret;
+
+ft = ft_strtrim("abcbc42Tokyoabcbc", "abc");
+ret = strcmp(ans, ft) == 0;
+free(ft);
+if (ret)
+	return (true);
+return (false);
+
+> Basic2 Test           : [KO]
+[Test case] :
+
+const char	*ans = "42Tokyo";
+char		*ft;
+bool		ret;
+
+ft = ft_strtrim("42Tokyoabcbc", "abc");
+ret = strcmp(ans, ft) == 0;
+free(ft);
+if (ret)
+	return (true);
+return (false);
+
+> Basic3 Test           : [KO]
+[Test case] :
+
+const char	*ans = "42Tokyo";
+char		*ft;
+bool		ret;
+
+ft = ft_strtrim("42Tokyo", "abc");
+ret = strcmp(ans, ft) == 0;
+free(ft);
+if (ret)
+	return (true);
+return (false);
+
+> Same String Test      : [KO]
+[Test case] :
+
+const char	*ans = "";
+char		*ft;
+bool		ret;
+
+ft = ft_strtrim("abcbcabcabcbc", "abc");
+ret = strcmp(ans, ft) == 0;
+free(ft);
+if (ret)
+	return (true);
+return (false);
+
+> Null1 Test            : [KO]
+[Test case] :
+
+char		*ft;
+
+ft = ft_strtrim(NULL, "abc");
+if (ft == NULL)
+	return (true);
+return (false);
+
+> Null2 Test            : [KO]
+[Test case] :
+
+char		*ft;
+
+ft = ft_strtrim("abc", NULL);
+if (ft == NULL)
+	return (true);
+return (false);
+
+> Null3 Test            : [KO]
+[Test case] :
+
+char		*ft;
+
+ft = ft_strtrim(NULL, NULL);
+if (ft == NULL)
+	return (true);
+return (false);
+
+
+----------------- substr test -----------------
+> Basic1 Test          : [KO]
+[Test case] :
+
+const char	*ans = "42Toyko";
+char		*ft;
+bool		ret;
+
+ft = ft_substr("Roppongi42Toyko", 8, 7);
+ret = strcmp(ft, ans) == 0;
+free(ft);
+if (ret)
+	return (true);
+return (false);
+
+> Basic2 Test          : [KO]
+[Test case] :
+
+const char	*ans = "42Toyko";
+char		*ft1;
+char		*ft2;
+char		*ft3;
+bool		ret;
+
+ft1 = ft_substr("Roppongi42Toyko", 8, -1);
+ft2 = ft_substr("Roppongi42Toyko", 8, -1);
+ft3 = ft_substr("Roppongi42Toyko", 8, -1);
+free(ft2);
+free(ft3);
+ret = strcmp(ft1, ans) == 0;
+free(ft1);
+if (strcmp(ft1, ans) == 0)
+	return (true);
+return (false);
+
+> Basic3 Test          : [KO]
+[Test case] :
+
+const char	*ans = "";
+char		*ft;
+bool		ret;
+
+ft = ft_substr("4242Toyko", -1, -1);
+ret = strcmp(ft, ans) == 0;
+free(ft);
+if (ret)
+	return (true);
+return (false);
+
+> Null Test            : [KO]
+[Test case] :
+
+char		*ft;
+
+ft = ft_substr(NULL, 8, 7);
+if (ft == NULL)
+	return (true);
+return (false);
+
+
+----------------- tolower test -----------------
+> All(0~255) Test      : [KO]
+[Test case] :
+
+int	i;
+
+i = 0;
+while (i < UCHAR_MAX)
+{
+	if (tolower(i) != ft_tolower(i))
+		return (false);
+	i++;
+}
+return (true);
+
+
+----------------- toupper test -----------------
+> All(0~255) Test      : [KO]
+[Test case] :
+
+int	i;
+
+i = 0;
+while (i < UCHAR_MAX)
+{
+	if (toupper(i) != ft_toupper(i))
+		return (false);
+	i++;
+}
+return (true);
+
+

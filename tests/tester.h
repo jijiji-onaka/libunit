@@ -10,10 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SIGNAL_TEST_H
-# define SIGNAL_TEST_H
+#ifndef TESTER_H
+# define TESTER_H
 
-# include "../framework/libunit.h"
+# include "../framework/includes/libunit.h"
 # include "../libft/libft.h"
 # include <stdio.h>
 # include <string.h>
@@ -22,6 +22,7 @@
 # include <stdbool.h>
 # include <limits.h>
 # include <ctype.h>
+# include <fcntl.h>
 
 void	print_title(char *title);
 /*
@@ -120,7 +121,8 @@ int		memccpy_launcher(void);
 int		memccpy_basic1_test(void);
 int		memccpy_basic2_test(void);
 int		memccpy_basic3_test(void);
-int		memccpy_null_test(void);
+int		memccpy_null1_test(void);
+int		memccpy_null2_test(void);
 /*
 ** MEMCHR TEST
 */
@@ -128,40 +130,45 @@ int		memchr_launcher(void);
 int		memchr_basic1_test(void);
 int		memchr_basic2_test(void);
 int		memchr_basic3_test(void);
-int		memchr_null_test(void);
+int		memchr_null1_test(void);
+int		memchr_null2_test(void);
 /*
 ** MEMCMP TEST
 */
-int	    memcmp_launcher(void);
-int	    memcmp_basic1_test(void);
-int	    memcmp_basic2_test(void);
-int     memcmp_basic3_test(void);
-int	    memcmp_null_test(void);
+int		memcmp_launcher(void);
+int		memcmp_basic1_test(void);
+int		memcmp_basic2_test(void);
+int		memcmp_basic3_test(void);
+int		memcmp_null1_test(void);
+int		memcmp_null2_test(void);
 
 /*
 ** MEMCPY TEST
 */
-int	    memcpy_launcher(void);
-int	    memcpy_basic1_test(void);
-int	    memcpy_basic2_test(void);
-int     memcpy_basic3_test(void);
-int	    memcpy_null_test(void);
+int		memcpy_launcher(void);
+int		memcpy_basic1_test(void);
+int		memcpy_basic2_test(void);
+int		memcpy_basic3_test(void);
+int		memcpy_null1_test(void);
+int		memcpy_null2_test(void);
 /*
 ** MEMMOVE TEST
 */
-int	    memmove_launcher(void);
-int	    memmove_basic1_test(void);
-int	    memmove_basic2_test(void);
-int     memmove_basic3_test(void);
-int	    memmove_null_test(void);
+int		memmove_launcher(void);
+int		memmove_basic1_test(void);
+int		memmove_basic2_test(void);
+int		memmove_basic3_test(void);
+int		memmove_null1_test(void);
+int		memmove_null2_test(void);
 /*
 ** MEMSET TEST
 */
-int	    memset_launcher(void);
-int	    memset_basic1_test(void);
-int	    memset_basic2_test(void);
-int     memset_basic3_test(void);
-int	    memset_null_test(void);
+int		memset_launcher(void);
+int		memset_basic1_test(void);
+int		memset_basic2_test(void);
+int		memset_basic3_test(void);
+int		memset_null1_test(void);
+int		memset_null2_test(void);
 /*
 ** SPLIT TEST
 */
@@ -242,6 +249,9 @@ int		strncmp_basic5_test(void);
 int		strncmp_null1_test(void);
 int		strncmp_null2_test(void);
 int		strncmp_null3_test(void);
+int		strncmp_null4_test(void);
+int		strncmp_null5_test(void);
+int		strncmp_null6_test(void);
 /*
 ** STRNSTR TEST
 */
@@ -250,7 +260,10 @@ int		strnstr_basic1_test(void);
 int		strnstr_basic2_test(void);
 int		strnstr_basic3_test(void);
 int		strnstr_basic4_test(void);
-int		strnstr_null_test(void);
+int		strnstr_null1_test(void);
+int		strnstr_null2_test(void);
+int		strnstr_null3_test(void);
+int		strnstr_null4_test(void);
 /*
 ** STRRCHR TEST
 */
@@ -294,11 +307,16 @@ int		toupper_all_test(void);
 /*
 **
 */
-# define OK true
-# define KO false
+# define OK 1
+# define KO 0
 # define COLOR_YELLOW "\033[33m"
 # define BOLD "\033[1m"
 # define COLOR_RESET "\033[0m"
 # define SIZE 100
 # define BIG 100000
+# define TEST_NUM 10
+
+int		g_result_file_fd;
+char	*g_failed_testcase;
+
 #endif

@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   05_time_error_test.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmatsuka <rmatsuka@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/12 08:02:43 by rmatsuka          #+#    #+#             */
-/*   Updated: 2021/05/13 08:41:40 by rmatsuka         ###   ########.fr       */
+/*   Updated: 2021/05/15 03:50:34 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../tester.h"
 
-static bool	do_time_error()
+static bool	do_time_error(void)
 {
-	while (1)
+	while (42)
 		;
 	return (true);
 }

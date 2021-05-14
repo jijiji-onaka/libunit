@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   04_null_test.c                                     :+:      :+:    :+:   */
+/*   testlist_clear.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmatsuka < rmatsuka@student.42tokyo.jp>    +#+  +:+       +#+        */
+/*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/10 19:54:42 by rmatsuka          #+#    #+#             */
-/*   Updated: 2021/05/11 08:50:28 by rmatsuka         ###   ########.fr       */
+/*   Created: 2021/05/11 13:10:44 by rmatsuka          #+#    #+#             */
+/*   Updated: 2021/05/13 22:08:59 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./../tester.h"
+#include "../includes/libunit.h"
 
-int	memset_null_test(void)
+void	testlist_clear(t_unit_test **testlist)
 {
-	ft_memset(NULL, '\0', SIZE);
-	memset(NULL, '\0', SIZE);
-	return (0);
+	t_unit_test	*tmp;
+
+	if (testlist == NULL || *testlist == NULL)
+		return ;
+	while (*testlist)
+	{
+		tmp = *testlist;
+		*testlist = (*testlist)->next;
+		free(tmp);
+	}
 }

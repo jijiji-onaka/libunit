@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   04_null_test.c                                     :+:      :+:    :+:   */
+/*   05_null2_test.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmatsuka < rmatsuka@student.42tokyo.jp>    +#+  +:+       +#+        */
+/*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/10 19:54:42 by rmatsuka          #+#    #+#             */
-/*   Updated: 2021/05/11 11:19:58 by rmatsuka         ###   ########.fr       */
+/*   Created: 2021/05/10 19:52:34 by rmatsuka          #+#    #+#             */
+/*   Updated: 2021/05/15 01:22:11 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../tester.h"
 
-int	memccpy_null_test(void)
+int	memchr_null2_test(void)
 {
 	char	s1[10];
 	char	s2[10];
 
-	ft_memccpy(s1, NULL, 'a', 10);
-	memccpy(s2, NULL, 'a', 10);
-	if (!strcmp(s1, s2))
+	g_failed_testcase = "char	s1[10];\
+char	s2[10];\
+\n\
+if (ft_memchr(NULL, 'a', 0) == memchr(NULL, 'a', 0))\
+	return (0);\
+else\
+	return (-1);";
+	if (ft_memchr(NULL, 'a', 0) == memchr(NULL, 'a', 0))
 		return (0);
 	else
 		return (-1);

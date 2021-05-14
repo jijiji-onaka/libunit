@@ -6,16 +6,27 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 15:54:41 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/05/11 16:09:39 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/05/15 03:39:54 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../tester.h"
 
-static bool	null_test()
+static void	set_testcase(void)
+{
+	g_failed_testcase = "char		**split;\
+\n\
+split = ft_split(NULL, '7');\
+if (split == NULL)\
+	return (true);\
+return (false);";
+}
+
+static bool	null_test(void)
 {
 	char		**split;
 
+	set_testcase();
 	split = ft_split(NULL, '7');
 	if (split == NULL)
 		return (true);

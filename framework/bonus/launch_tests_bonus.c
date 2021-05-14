@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   launch_tests.c                                     :+:      :+:    :+:   */
+/*   launch_tests_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmatsuka <rmatsuka@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 11:35:59 by rmatsuka          #+#    #+#             */
-/*   Updated: 2021/05/13 10:23:37 by rmatsuka         ###   ########.fr       */
+/*   Updated: 2021/05/15 03:34:19 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libunit.h"
+#include "../includes/libunit.h"
 
 static void	put_signal(int status)
 {
 	if (status == SIGSEGV)
-		ft_put_s(MSG_SEGV, STDOUT_FILENO);
+		put_status("\033[38;5;153m", "[SEGV]");
 	else if (status == SIGBUS)
-		ft_put_s(MSG_BUS, STDOUT_FILENO);
+		put_status("\033[38;5;80m", "[BUSE]");
 	else if (status == SIGALRM)
-		ft_put_s(MSG_TIMEOUT, STDOUT_FILENO);
+		put_status("\033[38;5;75m", "[TIMEOUT]");
 	else if (status == SIGABRT)
-		ft_put_s(MSG_ABRT, STDOUT_FILENO);
+		put_status("\033[38;5;13m", "[ABRT]");
 	else if (status == SIGFPE)
-		ft_put_s(MSG_FPE, STDOUT_FILENO);
+		put_status("\033[38;5;112m", "[FPE]");
 	else if (status == ILL_ILLOPC)
-		ft_put_s(MSG_ILL, STDOUT_FILENO);
+		put_status("\033[38;5;214m", "[ILL]");
 	else
-		ft_put_s(MSG_CRASH, STDOUT_FILENO);
+		put_status("\033[38;5;220m", "[CRASH]");
 }
 
 static int	check_status(int status)
@@ -36,19 +36,26 @@ static int	check_status(int status)
 	{
 		if (WEXITSTATUS(status) == 0)
 		{
-			ft_put_s(MSG_OK, STDOUT_FILENO);
+			put_status("\033[38;5;2m", "[OK]");
 			return (1);
 		}
 		else if (WEXITSTATUS(status) == 255)
-			ft_put_s(MSG_KO, STDOUT_FILENO);
+		{
+			put_status("\033[38;5;9m", "[KO]");
+		}
 	}
 	if (WIFSIGNALED(status))
 		put_signal(status);
+	write(g_result_file_fd, "[Test case] :\n\n", 15);
+	put_testcase(g_buf);
+	g_buf[0] = '\0';
+	bzero(g_buf, 1023);
 	return (0);
 }
 
 static int	put_result(int success_cnt, int tests_cnt)
 {
+	write(g_result_file_fd, "\n", 1);
 	printf("\033[36m%d/%d tests passed\033[49m", success_cnt, tests_cnt);
 	if (tests_cnt == success_cnt)
 	{
@@ -60,21 +67,26 @@ static int	put_result(int success_cnt, int tests_cnt)
 	return (0);
 }
 
-static int	run_test(int (*f)(void))
+static int	run_test(int (*f)(void), char *test_name)
 {
 	int	pid;
 	int	status;
+	int	pipe_fd[2];
 
+	if (pipe(pipe_fd) == -1)
+		exit_fatal(__LINE__, __FILE__);
 	pid = fork();
 	if (pid < 0)
 		exit_fatal(__LINE__, __FILE__);
 	else if (pid == 0)
-	{
-	//if (BONUS) ??
-		alarm(2);
-		exit(f());
-	}
-	wait(&status);
+		child_process(pipe_fd, f, test_name);
+	close(pipe_fd[1]);
+	bzero(g_buf, 1024);
+	read(pipe_fd[0], g_buf, 1023);
+	close(pipe_fd[0]);
+	if (wait(&status) == -1)
+		exit_fatal(__LINE__, __FILE__);
+	g_failed_testcase = NULL;
 	return (check_status(status));
 }
 
@@ -95,7 +107,10 @@ int	launch_tests(t_unit_test **list)
 		ft_put_s("> ", STDOUT_FILENO);
 		ft_put_s(testlist->name, STDOUT_FILENO);
 		ft_put_s(" : ", STDOUT_FILENO);
-		success_cnt += run_test(testlist->f);
+		ft_put_s("> ", g_result_file_fd);
+		ft_put_s(testlist->name, g_result_file_fd);
+		ft_put_s(" : ", g_result_file_fd);
+		success_cnt += run_test(testlist->f, testlist->name);
 		tests_cnt++;
 		testlist = testlist->next;
 	}

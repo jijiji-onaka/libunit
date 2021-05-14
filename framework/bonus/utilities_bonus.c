@@ -3,14 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   utilities.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmatsuka <rmatsuka@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 13:02:22 by rmatsuka          #+#    #+#             */
-/*   Updated: 2021/05/11 13:31:01 by rmatsuka         ###   ########.fr       */
+/*   Updated: 2021/05/15 00:45:49 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libunit.h"
+#include "../includes/libunit.h"
+
+void	put_status(char *color, char *msg)
+{
+	ft_put_s(color, STDOUT_FILENO);
+	ft_put_s(msg, STDOUT_FILENO);
+	ft_put_s(msg, g_result_file_fd);
+	ft_put_s("\n", g_result_file_fd);
+	write(STDOUT_FILENO, "\033[0m\n", 5);
+}
 
 void	ft_put_s(char *s, int fd)
 {

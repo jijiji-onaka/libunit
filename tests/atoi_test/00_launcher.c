@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   00_launcher.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmatsuka <rmatsuka@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 22:28:33 by rmatsuka          #+#    #+#             */
-/*   Updated: 2021/05/12 07:34:06 by rmatsuka         ###   ########.fr       */
+/*   Updated: 2021/05/15 03:53:36 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,5 @@ int	atoi_launcher(void)
 	load_test(&testlist, "IntMax Test        ", &atoi_intmax_test);
 	load_test(&testlist, "IntMin Test        ", &atoi_intmin_test);
 	load_test(&testlist, "Space Test         ", &atoi_space_test);
-	return(launch_tests(&testlist));
+	return (launch_tests(&testlist));
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   01_basic_test.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmatsuka <rmatsuka@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 19:35:30 by rmatsuka          #+#    #+#             */
-/*   Updated: 2021/05/12 07:36:27 by rmatsuka         ###   ########.fr       */
+/*   Updated: 2021/05/15 01:20:05 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,26 @@
 
 int	itoa_basic_test(void)
 {
-	char	*s = ft_itoa(42);
+	char	*str;
+	bool	ret;
 
-	if (!strcmp(s, "42"))
+	g_failed_testcase = "char	*str;\
+\n\
+str = ft_itoa(42);\
+if (!strcmp(str, \"42\"))\
+{\
+	free(str);\
+	return (0);\
+}\
+else\
+{\
+	free(str);\
+	return (-1);\
+}";
+	str = ft_itoa(42);
+	ret = strcmp(str, "42");
+	free(str);
+	if (ret == 0)
 		return (0);
 	else
 		return (-1);

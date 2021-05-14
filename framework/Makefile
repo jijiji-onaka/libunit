@@ -3,35 +3,54 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rmatsuka <rmatsuka@student.42tokyo.jp>     +#+  +:+       +#+         #
+#    By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/08 16:29:38 by rmatsuka          #+#    #+#              #
-#    Updated: 2021/05/11 13:34:11 by rmatsuka         ###   ########.fr        #
+#    Updated: 2021/05/15 03:33:58 by tjinichi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME =		libunit.a
-SRCS =		launch_tests.c \
-			load_test.c \
-			exit_fatal.c \
-			utilities.c \
-			testlist_clear.c
+M_NAME =		libunit_mandatory.a
+B_NAME =		libunit_bonus.a
+SRCS =		srcs/launch_tests.c \
+			srcs/load_test.c \
+			srcs/exit_fatal.c \
+			srcs/utilities.c \
+			srcs/testlist_clear.c
+
+B_SRCS =	bonus/launch_tests_bonus.c \
+			bonus/load_test_bonus.c \
+			bonus/exit_fatal_bonus.c \
+			bonus/utilities_bonus.c \
+			bonus/testlist_clear_bonus.c \
+			bonus/testcase.c \
+			bonus/child_process.c \
+			bonus/testcase_utils.c \
 
 
 OBJS = 		$(SRCS:.c=.o)
+B_OBJS = 		$(B_SRCS:.c=.o)
 
 CC 	=		gcc
 CFLAGS =	-Werror -Wall -Wextra
 
 RM		=	rm -f
 
-all:	$(NAME)
+all:	$(M_NAME)
 
-$(NAME):	$(OBJS)
-			ar rcs $(NAME) $(OBJS) ../libft/libft.a
+bonus:	$(B_NAME)
+
+$(M_NAME):	$(OBJS)
+	ar rcs $(M_NAME) $(OBJS)
+	@mv $(M_NAME) $(NAME)
+
+$(B_NAME):	$(B_OBJS)
+	ar rcs $(B_NAME) $(B_OBJS)
+	@mv $(B_NAME) $(NAME)
 
 clean:
-			$(RM) $(OBJS)
+			$(RM) $(OBJS) $(B_OBJS)
 
 fclean:		clean
 			$(RM) $(NAME)

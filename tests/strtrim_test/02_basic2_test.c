@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 15:43:54 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/05/11 19:45:48 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/05/15 01:33:56 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,22 @@ static bool	basic_test(void)
 {
 	const char	*ans = "42Tokyo";
 	char		*ft;
+	bool		ret;
 
+	g_failed_testcase = "const char	*ans = \"42Tokyo\";\
+char		*ft;\
+bool		ret;\
+\n\
+ft = ft_strtrim(\"42Tokyoabcbc\", \"abc\");\
+ret = strcmp(ans, ft) == 0;\
+free(ft);\
+if (ret)\
+	return (true);\
+return (false);";
 	ft = ft_strtrim("42Tokyoabcbc", "abc");
-	if (strcmp(ans, ft) == 0)
+	ret = strcmp(ans, ft) == 0;
+	free(ft);
+	if (ret)
 		return (true);
 	return (false);
 }
