@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 16:39:23 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/05/15 03:38:26 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/05/15 04:10:56 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ static bool	long_str_test(void)
 	ret = strcmp(ft, libc) == 0 && ft != libc;
 	free(ft);
 	free(libc);
-	if (strcmp(ft, libc) == 0 && ft != libc)
+	if (ret)
 		return (true);
 	else
 		return (false);
