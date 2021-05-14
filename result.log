@@ -1,0 +1,290 @@
+----------------- signal test -----------------
+> True Test    : [OK]
+> False Test   : [KO]
+[Test case] :
+
+> Segv Test    : [SEGV]
+[Test case] :
+
+> buse Test    : [BUSE]
+[Test case] :
+
+> Time Test    : [TIMEOUT]
+[Test case] :
+
+> Abort Test   : [ABRT]
+[Test case] :
+
+> Fpe Test     : [FPE]
+[Test case] :
+
+> Crash Test   : [CRASH]
+[Test case] :
+
+> Ill Test     : [ILL]
+[Test case] :
+
+
+----------------- atoi test -----------------
+> Basic Test          : [OK]
+> Null Test           : [OK]
+> IntMax Test         : [OK]
+> IntMin Test         : [OK]
+> Space Test          : [OK]
+
+----------------- bzero test -----------------
+> Basic Test          : [OK]
+> Null Test           : [OK]
+> BigSize Test        : [OK]
+
+----------------- calloc test -----------------
+> Basic Test          : [OK]
+> Zero Test           : [OK]
+> BigSize Test        : [OK]
+> Minus Test          : [KO]
+[Test case] :
+
+char	*s1;
+char	*s2;
+int		result;
+
+s1 = ft_calloc(-42, -42);
+s2 = calloc(-42, -42);
+result = 0;
+if (s1 == s2)
+	result = 0;
+else
+	result = -1;
+free(s1);
+free(s2);
+return (result);
+
+
+----------------- isalnum test -----------------
+> Basic1 Test          : [OK]
+> Basic2 Test          : [OK]
+> All Test             : [OK]
+
+----------------- isalpha test -----------------
+> Basic1 Test          : [OK]
+> Basic2 Test          : [OK]
+> All Test             : [OK]
+
+----------------- isascii test -----------------
+> Basic1 Test          : [OK]
+> Basic2 Test          : [OK]
+> All Test             : [OK]
+
+----------------- isdigit test -----------------
+> Basic1 Test          : [OK]
+> Basic2 Test          : [OK]
+> All Test             : [OK]
+
+----------------- isprint test -----------------
+> Basic1 Test          : [OK]
+> Basic2 Test          : [OK]
+> All Test             : [OK]
+
+----------------- itoa test -----------------
+> Basic Test           : [OK]
+> IntMax Test          : [OK]
+> IntMin Test          : [OK]
+> Zero Test            : [OK]
+
+----------------- memccpy test -----------------
+> Basic1 Test          : [OK]
+> Basic2 Test          : [OK]
+> Basic3 Test          : [OK]
+> Null1 Test           : [OK]
+> Null1 Test           : [OK]
+
+----------------- memchr test -----------------
+> Basic1 Test          : [OK]
+> Basic2 Test          : [OK]
+> Basic3 Test          : [OK]
+> Null1 Test           : [OK]
+> Null2 Test           : [OK]
+
+----------------- memcmp test -----------------
+> Basic1 Test          : [OK]
+> Basic2 Test          : [OK]
+> Basic3 Test          : [OK]
+> Null1 Test           : [OK]
+> Null1 Test           : [OK]
+
+----------------- memcpy test -----------------
+> Basic1 Test          : [OK]
+> Basic2 Test          : [OK]
+> Basic3 Test          : [OK]
+> Null1 Test           : [OK]
+> Null2 Test           : [OK]
+
+----------------- memmove test -----------------
+> Basic1 Test          : [OK]
+> Basic2 Test          : [OK]
+> Basic3 Test          : [OK]
+> Null1 Test           : [OK]
+> Null2 Test           : [OK]
+
+----------------- memset test -----------------
+> Basic1 Test          : [OK]
+> Basic2 Test          : [OK]
+> Basic3 Test          : [OK]
+> Null1 Test           : [OK]
+> Null2 Test           : [OK]
+
+----------------- split test -----------------
+> Basic Test          : [OK]
+> Empty1 Test         : [OK]
+> Empty2 Test         : [OK]
+> Empty3 Test         : [OK]
+> Same chr Test       : [OK]
+> Null Test           : [OK]
+
+----------------- strchr test -----------------
+> Basic Test          : [OK]
+> Empty1 Test         : [OK]
+> Empty2 Test         : [OK]
+> Empty3 Test         : [OK]
+> Match head Test     : [OK]
+> Match tail Test     : [OK]
+
+----------------- strdup test -----------------
+> Basic Test          : [OK]
+> Empty Test          : [OK]
+> Long string Test    : [OK]
+
+----------------- strjoin test -----------------
+> Basic Test           : [OK]
+> Empty1 Test          : [OK]
+> Empty2 Test          : [OK]
+> Empty3 Test          : [OK]
+> Null1 Test           : [OK]
+> Null2 Test           : [OK]
+> Null3 Test           : [OK]
+
+----------------- strlcat test -----------------
+> Basic1 Test          : [OK]
+> Basic2 Test          : [OK]
+> Basic3 Test          : [OK]
+> Basic4 Test          : [OK]
+> Basic5 Test          : [OK]
+> Null1 Test           : [KO]
+[Test case] :
+
+char	src[10] = "42Tokyo";
+size_t	res1;
+size_t	res2;
+
+res1 = ft_strlcat(NULL, src, 0);
+res2 = strlcat(NULL, src, 0);
+if (res1 == res2)
+	return (true);
+else
+	return (false);
+
+> Null2 Test           : [OK]
+
+----------------- strlcpy test -----------------
+> Basic1 Test          : [OK]
+> Basic2 Test          : [OK]
+> Basic3 Test          : [OK]
+> Basic4 Test          : [OK]
+> Basic5 Test          : [OK]
+> Null1 Test           : [KO]
+[Test case] :
+
+char	src[10] = "42Tokyo";
+size_t	res1;
+size_t	res2;
+
+res1 = ft_strlcpy(NULL, src, 0);
+res2 = strlcpy(NULL, src, 0);
+if (res1 == res2)
+	return (true);
+else
+	return (false);
+
+> Null2 Test           : [KO]
+[Test case] :
+
+char	src[10] = "42Tokyo";
+size_t	res1;
+size_t	res2;
+
+res1 = ft_strlcpy(NULL, src, 1);
+res2 = strlcpy(NULL, src, 1);
+if (res1 == res2)
+	return (true);
+else
+	return (false);
+
+
+----------------- strlen test -----------------
+> Basic Test          : [OK]
+> Null Test           : [OK]
+> Long string Test    : [OK]
+
+----------------- strmapi test -----------------
+> Basic Test           : [OK]
+> Null1 Test           : [OK]
+> Null2 Test           : [OK]
+> Null3 Test           : [OK]
+
+----------------- strncmp test -----------------
+> Basic1 Test          : [OK]
+> Basic2 Test          : [OK]
+> Basic3 Test          : [OK]
+> Basic4 Test          : [OK]
+> Null1 Test           : [SEGV]
+[Test case] :
+
+> Null2 Test           : [SEGV]
+[Test case] :
+
+> Null3 Test           : [SEGV]
+[Test case] :
+
+> Null4 Test           : [OK]
+> Null5 Test           : [OK]
+> Null6 Test           : [OK]
+
+----------------- strnstr test -----------------
+> Basic1 Test          : [OK]
+> Basic2 Test          : [OK]
+> Basic3 Test          : [OK]
+> Basic4 Test          : [OK]
+> Null1 Test           : [OK]
+> Null2 Test           : [OK]
+> Null3 Test           : [OK]
+> Null4 Test           : [OK]
+
+----------------- strrchr test -----------------
+> Basic Test           : [OK]
+> Empty1 Test          : [OK]
+> Empty2 Test          : [OK]
+> Empty3 Test          : [OK]
+> Match head Test      : [OK]
+> Match tail Test      : [OK]
+
+----------------- strtrim test -----------------
+> Basic1 Test           : [OK]
+> Basic2 Test           : [OK]
+> Basic3 Test           : [OK]
+> Same String Test      : [OK]
+> Null1 Test            : [OK]
+> Null2 Test            : [OK]
+> Null3 Test            : [OK]
+
+----------------- substr test -----------------
+> Basic1 Test          : [OK]
+> Basic2 Test          : [OK]
+> Basic3 Test          : [OK]
+> Null Test            : [OK]
+
+----------------- tolower test -----------------
+> All(0~255) Test      : [OK]
+
+----------------- toupper test -----------------
+> All(0~255) Test      : [OK]
+
