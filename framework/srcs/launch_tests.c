@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 11:35:59 by rmatsuka          #+#    #+#             */
-/*   Updated: 2021/05/15 02:39:04 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/05/15 05:12:36 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,9 @@ int	launch_tests(t_unit_test **list)
 		ft_put_s("> ", STDOUT_FILENO);
 		ft_put_s(testlist->name, STDOUT_FILENO);
 		ft_put_s(" : ", STDOUT_FILENO);
+		ft_put_s("> ", g_result_file_fd);
+		ft_put_s(testlist->name, g_result_file_fd);
+		ft_put_s(" : ", g_result_file_fd);
 		success_cnt += run_test(testlist->f);
 		tests_cnt++;
 		testlist = testlist->next;
