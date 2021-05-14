@@ -303,6 +303,20 @@ int		tolower_all_test(void);
 */
 int		toupper_launcher(void);
 int		toupper_all_test(void);
+int		toupper_basic1_test(void);
+int		toupper_basic2_test(void);
+int		toupper_basic3_test(void);
+int		toupper_basic4_test(void);
+int		toupper_basic5_test(void);
+int		toupper_basic6_test(void);
+int		toupper_basic7_test(void);
+int		toupper_basic8_test(void);
+int		toupper_basic9_test(void);
+int		toupper_basic10_test(void);
+int		toupper_basic11_test(void);
+int		toupper_basic12_test(void);
+int		toupper_basic13_test(void);
+int		toupper_basic14_test(void);
 
 /*
 **

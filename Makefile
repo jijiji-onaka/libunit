@@ -6,7 +6,7 @@
 #    By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/09 14:16:52 by tjinichi          #+#    #+#              #
-#    Updated: 2021/05/15 04:27:25 by tjinichi         ###   ########.fr        #
+#    Updated: 2021/05/15 04:35:02 by tjinichi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -202,6 +202,20 @@ TEST_SRCS =	tests/main.c \
 		tests/tolower_test/01_all_test.c \
 		tests/toupper_test/00_launcher.c \
 		tests/toupper_test/01_all_test.c \
+		tests/toupper_test/02_basic1_test.c \
+		tests/toupper_test/03_basic2_test.c \
+		tests/toupper_test/04_basic3_test.c \
+		tests/toupper_test/05_basic4_test.c \
+		tests/toupper_test/06_basic5_test.c \
+		tests/toupper_test/07_basic6_test.c \
+		tests/toupper_test/08_basic7_test.c \
+		tests/toupper_test/09_basic8_test.c \
+		tests/toupper_test/10_basic9_test.c \
+		tests/toupper_test/11_basic10_test.c \
+		tests/toupper_test/12_basic11_test.c \
+		tests/toupper_test/13_basic12_test.c \
+		tests/toupper_test/14_basic13_test.c \
+		tests/toupper_test/15_basic14_test.c \
 
 TEST_OBJS = ${TEST_SRCS:.c=.o}
 
