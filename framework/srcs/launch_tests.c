@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 11:35:59 by rmatsuka          #+#    #+#             */
-/*   Updated: 2021/05/15 05:12:36 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/05/15 05:19:11 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,6 @@ int	launch_tests(t_unit_test **list)
 
 	if (*list == NULL)
 		return (0);
-	testlist = NULL;
 	testlist = *list;
 	tests_cnt = 0;
 	success_cnt = 0;
