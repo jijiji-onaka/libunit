@@ -12,6 +12,24 @@
 
 #include "./../tester.h"
 
+static int	do_fork(bool (*func)(void))
+{
+	pid_t	pid;
+	int		status;
+
+	pid = fork();
+	if (pid < 0)
+		exit_fatal(__LINE__, __FILE__);
+	if (pid == 0)
+		exit(func());
+	else
+		wait(&status);
+	if (WIFEXITED(status))
+		return (WEXITSTATUS(status));
+	else
+		return (WTERMSIG(status));
+}
+
 static bool	do_ill(void)
 {
 	raise(1);
@@ -21,7 +39,7 @@ static bool	do_ill(void)
 int	signal_ill_test(void)
 {
 	g_failed_testcase = "raise(1);";
-	if (do_ill())
+	if (do_fork(do_ill) == 0)
 		return (0);
 	else
 		return (-1);
