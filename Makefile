@@ -6,7 +6,7 @@
 #    By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/09 14:16:52 by tjinichi          #+#    #+#              #
-#    Updated: 2021/05/15 04:49:56 by tjinichi         ###   ########.fr        #
+#    Updated: 2021/05/15 05:27:33 by tjinichi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -236,17 +236,17 @@ test_bonus: b_all $(LIBS) $(TEST_OBJS)
 	./$(TEST) || true
 
 $(LIBS): FORCE
-	make -C libft/
+	make -C $(LIBDIR)/
 
 FORCE:
 
 clean:
-	$(MAKE) clean -C libft/
+	$(MAKE) clean -C $(LIBDIR)/
 	$(MAKE) clean -C framework/
 	rm -f $(TEST_OBJS)
 
 fclean: clean
-	$(MAKE) fclean -C libft/
+	$(MAKE) fclean -C $(LIBDIR)/
 	$(MAKE) fclean -C framework/
 	rm -f $(TEST)
 
