@@ -6,15 +6,14 @@
 #    By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/09 14:16:52 by tjinichi          #+#    #+#              #
-#    Updated: 2021/05/15 05:49:59 by tjinichi         ###   ########.fr        #
+#    Updated: 2021/05/15 05:54:11 by tjinichi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
 
 TEST = libunit_test
 
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra  # -g -fsanitize=address
+CFLAGS = -Wall -Werror -Wextra # -g -fsanitize=address
 
 LIBDIR = 	./libft
 LIBS = 	$(LIBDIR)/libft.a
