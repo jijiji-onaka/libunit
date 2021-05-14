@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 19:52:34 by rmatsuka          #+#    #+#             */
-/*   Updated: 2021/05/15 03:47:57 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/05/15 04:01:36 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int	memmove_basic3_test(void)
 	char	*s2;
 	int		ans;
 
+	set_testcase();
 	s1 = malloc(sizeof(char) * SIZE);
 	s2 = malloc(sizeof(char) * SIZE);
 	memset(s1, '1', SIZE);

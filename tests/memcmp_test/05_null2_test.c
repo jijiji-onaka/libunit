@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 19:52:34 by rmatsuka          #+#    #+#             */
-/*   Updated: 2021/05/15 01:22:58 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/05/15 04:01:07 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 int	memcmp_null2_test(void)
 {
 	char	s1[10];
-	char	s2[10];
 
 	g_failed_testcase = "char	*s1;\
 \n\
