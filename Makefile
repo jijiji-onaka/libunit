@@ -6,14 +6,22 @@
 #    By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/09 14:16:52 by tjinichi          #+#    #+#              #
+<<<<<<< HEAD
 #    Updated: 2021/05/15 05:41:30 by tjinichi         ###   ########.fr        #
+=======
+#    Updated: 2021/05/15 04:49:56 by tjinichi         ###   ########.fr        #
+>>>>>>> github/main
 #                                                                              #
 # **************************************************************************** #
 
 TEST = libunit_test
 
 CC = gcc
+<<<<<<< HEAD
 CFLAGS = -Wall -Werror -Wextra    # -g -fsanitize=address
+=======
+CFLAGS = -Wall -Werror -Wextra  # -g -fsanitize=address
+>>>>>>> github/main
 
 LIBDIR = 	./libft
 LIBS = 	$(LIBDIR)/libft.a
@@ -236,17 +244,29 @@ test_bonus: b_all $(LIBS) $(TEST_OBJS)
 	./$(TEST) || true
 
 $(LIBS): FORCE
+<<<<<<< HEAD
 	make -C $(LIBDIR)/
+=======
+	make -C libft/
+>>>>>>> github/main
 
 FORCE:
 
 clean:
+<<<<<<< HEAD
 	$(MAKE) clean -C $(LIBDIR)/
+=======
+	$(MAKE) clean -C libft/
+>>>>>>> github/main
 	$(MAKE) clean -C framework/
 	rm -f $(TEST_OBJS)
 
 fclean: clean
+<<<<<<< HEAD
 	$(MAKE) fclean -C $(LIBDIR)/
+=======
+	$(MAKE) fclean -C libft/
+>>>>>>> github/main
 	$(MAKE) fclean -C framework/
 	rm -f $(TEST)
 
