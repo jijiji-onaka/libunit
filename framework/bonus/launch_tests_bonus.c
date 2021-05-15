@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 11:35:59 by rmatsuka          #+#    #+#             */
-/*   Updated: 2021/05/15 03:34:19 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/05/15 11:06:01 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,9 +69,9 @@ static int	put_result(int success_cnt, int tests_cnt)
 
 static int	run_test(int (*f)(void), char *test_name)
 {
-	int	pid;
-	int	status;
-	int	pipe_fd[2];
+	pid_t	pid;
+	int		status;
+	int		pipe_fd[2];
 
 	if (pipe(pipe_fd) == -1)
 		exit_fatal(__LINE__, __FILE__);
