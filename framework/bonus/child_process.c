@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/15 03:27:37 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/05/15 04:04:48 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/05/15 11:02:55 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	child_process(int pipe_fd[2], int (*f)(void), char *test_name)
 	if (g_failed_testcase)
 	{
 		write(pipe_fd[1], g_failed_testcase, strlen(g_failed_testcase));
-		write(pipe_fd[1], "\n", STDOUT_FILENO);
+		write(pipe_fd[1], "\n", 1);
 	}
 	close(pipe_fd[1]);
 	exit(ret);
