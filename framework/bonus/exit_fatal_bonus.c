@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   exit_fatal.c                                       :+:      :+:    :+:   */
+/*   exit_fatal_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 11:28:45 by rmatsuka          #+#    #+#             */
-/*   Updated: 2021/05/13 22:08:59 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/05/15 22:07:44 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,4 +19,5 @@ void	exit_fatal(int line, char *file)
 	write(STDERR_FILENO, ":", 1);
 	ft_put_d(line, STDERR_FILENO);
 	write(STDERR_FILENO, "\n", 1);
+	exit(EXIT_FAILURE);
 }
