@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 22:28:33 by rmatsuka          #+#    #+#             */
-/*   Updated: 2021/05/15 23:54:42 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/05/16 11:02:46 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	atoi_launcher(void)
 {
-	t_unit_test    *testlist;
+	t_unit_test	*testlist;
 
 	testlist = NULL;
 	print_title("atoi test");
